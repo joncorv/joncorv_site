@@ -1,0 +1,15 @@
+---
+title: "Original Pattern Brewing Company"
+description: "Beer can label visualizations with custom droplet solver"
+date: "2018-10-01"
+client: "Play Studio"
+tools: ["Houdini", "Redshift"]
+tags: ["3D Animation", "Product Visualization"]
+externalLinks:
+  - label: "Play Studio"
+    url: "http://play.studio/"
+  - label: "Original Pattern Beer"
+    url: "https://www.originalpatternbeer.com/"
+---
+
+OPBC Can Visualizations — beer can label visualizations. The team aimed to celebrate the delicious canned concoctions and execute newly brewed flavors as fast as you can chug a pint, with turnaround times of one day per label. Utilized Houdini to develop a custom droplet solver that loops seamlessly, rendered using Redshift.

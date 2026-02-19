@@ -1,0 +1,9 @@
+---
+title: "Uber Driver Video"
+description: "Uber CPUC educational video for regulatory compliance"
+date: "2018-06-01"
+client: "Uber"
+tags: ["Animation", "Educational Video", "Motion Graphics"]
+---
+
+Uber CPUC Video — Educational content for hundreds of thousands of Uber drivers about regulatory compliance. Some of the technical aspects are complicated, and the job was to provide that information in a clear and entertaining way. Managed the complete production pipeline including script development, concept art creation, editorial work, and animation.

@@ -1,0 +1,23 @@
+---
+title: "SFMoMa Modern Ball"
+description: "Flip-book invitations for distinguished guests of the San Francisco Museum of Modern Art"
+date: "2017-11-01"
+client: "SFMoMa"
+tools: ["Houdini", "Redshift"]
+tags: ["Invitation Design", "Event Marketing", "3D Animation"]
+externalLinks:
+  - label: "Hybrid Design"
+    url: "http://hybrid-design.com/"
+  - label: "SFMoMa"
+    url: "https://www.sfmoma.org/"
+images:
+  - src: "/images/animation/sfmoma-modern-ball/eventbrite-tier-1.png"
+    alt: "Eventbrite Header - Tier 1"
+  - src: "/images/animation/sfmoma-modern-ball/eventbrite-tier-2.png"
+    alt: "Eventbrite Header - Tier 2"
+  - src: "/images/animation/sfmoma-modern-ball/eventbrite-tier-3.png"
+    alt: "Eventbrite Header - Tier 3"
+thumbnail: "/images/animation/sfmoma-modern-ball/eventbrite-tier-1.png"
+---
+
+Flip-book invitations for distinguished guests of the San Francisco Museum of Modern Art. Created custom Eventbrite headers for three ticketing tiers. A collaboration with Hybrid Design resulting in super fun deliverables.
