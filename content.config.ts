@@ -1,6 +1,7 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const projectSchema = z.object({
+  title: z.string(),
   description: z.string().optional(),
   date: z.string().optional(),
   client: z.string().optional(),
@@ -25,12 +26,12 @@ export default defineContentConfig({
     }),
     animation: defineCollection({
       type: 'page',
-      source: 'animation/**',
+      source: 'animation/*.md',
       schema: projectSchema,
     }),
     software: defineCollection({
       type: 'page',
-      source: 'software/**',
+      source: 'software/*.md',
       schema: projectSchema,
     }),
   },
