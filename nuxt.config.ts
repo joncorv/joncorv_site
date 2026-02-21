@@ -11,6 +11,8 @@ export default defineNuxtConfig({
   ],
   fonts: {
     families: [
+      { name: "Playfair Display", provider: "google" },
+      { name: "Space Mono", provider: "google" },
       { name: "JetBrains Mono", provider: "google" },
     ],
   },
