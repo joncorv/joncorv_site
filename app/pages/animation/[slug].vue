@@ -6,11 +6,72 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 </script>
 
 <template>
-  <h1> {{ project.title }} </h1>
-  <h3> {{ project.description }} </h3>
-  <h1> {{ project.client }} </h1>
-  <h1> {{ project.date }} </h1>
-  <h1> {{ project.tools }} </h1>
-  <h1> {{ project.tags }} </h1>
-  <ContentRenderer :value="project" />
+  <UContainer>
+    <div class="page">
+      <h1 class="page-title">{{ project.title }}</h1>
+      <p v-if="project.description" class="page-description">{{ project.description }}</p>
+
+      <div class="meta">
+        <span v-if="project.client">{{ project.client }}</span>
+        <span v-if="project.date">{{ project.date }}</span>
+      </div>
+
+      <div v-if="project.tools?.length" class="tags">
+        <span v-for="tool in project.tools" :key="tool" class="tag">{{ tool }}</span>
+      </div>
+
+      <div v-if="project.tags?.length" class="tags">
+        <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
+      </div>
+
+      <div class="content">
+        <ContentRenderer :value="project" />
+      </div>
+    </div>
+  </UContainer>
 </template>
+
+<style scoped>
+.page {
+  padding: 3rem 0;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  font-size: 1.125rem;
+  color: var(--ui-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--ui-text-muted);
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
+}
+
+.content {
+  margin-top: 2rem;
+}
+</style>
