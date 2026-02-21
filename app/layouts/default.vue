@@ -32,7 +32,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
     <!--   <Logo class="h-6 w-auto" /> -->
     <!-- </template> -->
 
-    <UNavigationMenu :items="items" />
+    <!-- <UNavigationMenu :items="items" /> -->
 
     <template #right>
       <UColorModeButton />
