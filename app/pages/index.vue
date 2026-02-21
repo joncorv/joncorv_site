@@ -17,8 +17,7 @@ const allProjects = computed(() => [
       <div v-if="allProjects.length" class="project-grid">
         <NuxtLink v-for="project in allProjects" :key="project.id" :to="project.path" class="project-card">
           <div class="project-thumb">
-            <NuxtImg src="/images/animation/thao-and-the-get-down-stay-down/front-cover.png" alt="Project thumbnail"
-              width="128" height="128" class="project-thumb-img" />
+            <NuxtImg :src="project.thumbnail" alt="Project thumbnail" class="project-thumb-img" />
           </div>
           <div class="project-info">
             <span class="project-title">{{ project.title }}</span>
@@ -91,13 +90,13 @@ const allProjects = computed(() => [
   background-color: var(--ui-bg-elevated);
   border: 1px solid var(--ui-border);
   position: relative;
-  transition: border-color 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  /* transition: border-color 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 
 .project-card:hover .project-thumb {
   border-color: var(--ui-border-active);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: border-color 0.1s cubic-bezier(0.7, 0, 0.84, 0), box-shadow 0.075s cubic-bezier(0.7, 0, 0.84, 0);
+  /* transition: border-color 0.1s cubic-bezier(0.7, 0, 0.84, 0), box-shadow 0.075s cubic-bezier(0.7, 0, 0.84, 0); */
 }
 
 .project-thumb-img {
@@ -108,12 +107,12 @@ const allProjects = computed(() => [
   object-fit: cover;
   /* filter: grayscale(1); */
   opacity: 0.25;
-  transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  /* transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 
 .project-card:hover .project-thumb-img {
-  opacity: 0.5;
-  transition: opacity 0.1s cubic-bezier(0.7, 0, 0.84, 0);
+  opacity: 1;
+  /* transition: opacity 0.1s cubic-bezier(0.7, 0, 0.84, 0); */
 }
 
 .project-info {
