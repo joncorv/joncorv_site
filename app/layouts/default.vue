@@ -27,10 +27,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
 </script>
 
 <template>
-  <UHeader>
-    <template #title>
-      <Logo class="h-6 w-auto" />
-    </template>
+  <UHeader title="Jonathan Corriveau">
+    <!-- <template #title> -->
+    <!--   <Logo class="h-6 w-auto" /> -->
+    <!-- </template> -->
 
     <UNavigationMenu :items="items" />
 
@@ -48,4 +48,21 @@ const items = computed<NavigationMenuItem[]>(() => [{
     </template>
   </UHeader>
   <slot />
+
+  <UFooter>
+    <template #left>
+      <p class="text-muted text-sm">Copyright © {{ new Date().getFullYear() }}</p>
+    </template>
+
+    <!-- <UNavigationMenu :items="items" variant="link" /> -->
+
+    <template #right>
+      <UButton icon="i-simple-icons-instagram" color="neutral" variant="ghost" to="https://www.instagram.com/joncorv/"
+        target="_blank" aria-label="Instagram" />
+      <UButton icon="i-simple-icons-linkedin" color="neutral" variant="ghost" to="https://www.linkedin.com/in/joncorv/"
+        target="_blank" aria-label="LinkedIn" />
+      <UButton icon="i-simple-icons-github" color="neutral" variant="ghost" to="https://github.com/joncorv"
+        target="_blank" aria-label="GitHub" />
+    </template>
+  </UFooter>
 </template>
