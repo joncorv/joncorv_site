@@ -1,6 +1,6 @@
 ---
 title: "Be Good"
-description: "Collaborative project featuring illustrated characters created in Houdini with Solaris USD technology"
+description: "CG Set Design"
 tools: ["Houdini", "Solaris USD"]
 tags: ["Animation", "Character Design", "3D Modeling"]
 ---

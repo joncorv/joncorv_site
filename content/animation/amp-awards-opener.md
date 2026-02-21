@@ -1,6 +1,6 @@
 ---
 title: "AMP Awards Opener"
-description: "Opening sequence for the AMP Awards show in New York City"
+description: "Opening sequence for show in NYC"
 date: "2019-09-01"
 client: "The Association of Music Producers"
 tags: ["Animation", "3D Animation", "Event Opening"]

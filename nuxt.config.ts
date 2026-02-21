@@ -7,7 +7,14 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
     "@nuxt/icon",
+    "@nuxt/fonts",
   ],
+  fonts: {
+    families: [
+      { name: "JetBrains Mono", provider: "google" },
+    ],
+  },
+  image: {},
   devtools: { enabled: true },
   compatibilityDate: "2024-04-03",
   css: ["~/assets/css/main.css"],
