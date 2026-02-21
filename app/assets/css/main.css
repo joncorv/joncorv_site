@@ -2,6 +2,11 @@
 @import "@nuxt/ui";
 
 * {
+  font-family: "Playfair Display", Georgia, serif;
   font-family: "JetBrains Mono", monospace;
   font-feature-settings: "liga" 1, "calt" 1;
+}
+
+code, pre, kbd, samp, .font-mono {
+  font-family: "Space Mono", monospace;
 }
