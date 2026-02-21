@@ -27,10 +27,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
 </script>
 
 <template>
-  <UHeader title="Jonathan Corriveau">
-    <!-- <template #title> -->
-    <!--   <Logo class="h-6 w-auto" /> -->
-    <!-- </template> -->
+  <UHeader>
+    <template #title>
+      <p class="title_my_name">JONATHAN CORRIVEAU</p>
+    </template>
 
     <!-- <UNavigationMenu :items="items" /> -->
 
@@ -66,3 +66,12 @@ const items = computed<NavigationMenuItem[]>(() => [{
     </template>
   </UFooter>
 </template>
+
+<style scoped>
+.title_my_name {
+  /* font-family: "JetBrains Mono", monospace; */
+  font-family: "Space Mono", monospace;
+  font-size: .8em;
+  font-weight: 600;
+}
+</style>
