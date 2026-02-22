@@ -9,9 +9,10 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   <UContainer>
     <div class="page">
 
-      <p v-if="project.client" class="page-client">A COLLAB WITH {{ project.client.toUpperCase() }}</p>
+      <p v-if="project.client" class="page-client">{{ project.client.toUpperCase() }}</p>
 
-      <h1 class="page-title">{{ project.title }}</h1>
+      <!-- <h1 class="page-title">{{ project.title }}</h1> -->
+      <h1 class="page-title">{{ project.description }}</h1>
       <!-- <p v-if="project.description" class="page-description">{{ project.description }}</p> -->
 
       <!-- <div class="meta"> -->
@@ -45,7 +46,7 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 }
 
 .page-client {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--ui-text-muted);
   margin-bottom: -0.5rem;
 }
@@ -54,12 +55,12 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   font-family: "Playfair Display";
   font-size: 3.25rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .page-description {
   font-family: "Playfair Display";
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   color: var(--ui-text-muted);
   margin-bottom: 1.5rem;
 }
