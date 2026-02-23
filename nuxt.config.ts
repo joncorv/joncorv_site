@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxt/icon",
     "@nuxt/fonts",
+    "nuxt-studio",
   ],
   fonts: {
     families: [
