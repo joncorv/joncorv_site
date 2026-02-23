@@ -91,4 +91,19 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 .content {
   margin-top: 2rem;
 }
+
+
+.content :deep(*) {
+  font-family: "Playfair Display";
+}
+
+.content :deep(h1),
+.content :deep(h2),
+.content :deep(h3),
+.content :deep(h4),
+.content :deep(p) {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
