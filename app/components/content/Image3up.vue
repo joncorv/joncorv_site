@@ -25,6 +25,11 @@ const props = defineProps({
 
 const containerHeight = computed(() => `${props.height}rem`)
 
+
+
+
+
+
 const split_result = computed(() => props.split_right ? "split-right" : "split-left")
 
 </script>
@@ -47,6 +52,8 @@ const split_result = computed(() => props.split_right ? "split-right" : "split-l
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .container.split-left {
