@@ -1,4 +1,4 @@
-<script setup lang="ts" vapor>
+<script setup lang="ts">
 const { data: animationProjects } = await useAsyncData("animation", () => queryCollection("animation").all());
 const { data: softwareProjects } = await useAsyncData("software", () => queryCollection("software").all());
 

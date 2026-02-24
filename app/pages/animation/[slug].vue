@@ -1,4 +1,4 @@
-<script setup lang="ts" vapor>
+<script setup lang="ts">
 const slug = useRoute().params.slug;
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   return queryCollection("animation").path(`/animation/${slug}`).first();
