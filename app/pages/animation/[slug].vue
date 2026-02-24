@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts" vapor>
 const slug = useRoute().params.slug;
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   return queryCollection("animation").path(`/animation/${slug}`).first();
@@ -7,7 +7,10 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 
 <template>
   <UContainer>
-    <div class="page">
+    <div
+      v-if="project"
+      class="page"
+    >
       <p
         v-if="project.client"
         class="page-client"
@@ -56,6 +59,7 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
         <ContentRenderer :value="project" />
       </div>
     </div>
+    <UError v-else />
   </UContainer>
 </template>
 

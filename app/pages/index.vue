@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" vapor>
 const { data: animationProjects } = await useAsyncData("animation", () => queryCollection("animation").all());
 const { data: softwareProjects } = await useAsyncData("software", () => queryCollection("software").all());
 
@@ -6,6 +6,8 @@ const allProjects = computed(() => [
   ...(animationProjects.value || []),
   ...(softwareProjects.value || []),
 ]);
+
+const default_image = "images/dummy_image.png";
 </script>
 
 <template>
@@ -25,7 +27,14 @@ const allProjects = computed(() => [
         >
           <div class="project-thumb">
             <NuxtImg
+              v-if="project.thumbnail"
               :src="project.thumbnail"
+              alt="Project thumbnail"
+              class="project-thumb-img"
+            />
+            <NuxtImg
+              v-else
+              :src="default_image"
               alt="Project thumbnail"
               class="project-thumb-img"
             />
@@ -58,9 +67,9 @@ const allProjects = computed(() => [
 .project-hero {
   width: 100%;
   aspect-ratio: 16 / 7;
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
   background-color: var(--ui-bg-elevated);
-  border: 1px solid var(--ui-border);
+  border: 2px solid var(--ui-border);
   margin-bottom: 1.5rem;
 }
 
@@ -99,9 +108,9 @@ const allProjects = computed(() => [
 .project-thumb {
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
   background-color: var(--ui-bg-elevated);
-  border: 1px solid var(--ui-border);
+  border: 2px solid var(--ui-border);
   position: relative;
   /* transition: border-color 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
@@ -119,14 +128,14 @@ const allProjects = computed(() => [
   height: 100%;
   object-fit: cover;
   /* filter: grayscale(1); */
-  opacity: 0.25;
+  /* opacity: 0.25; */
   /* transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 
-.project-card:hover .project-thumb-img {
-  opacity: 1;
-  /* transition: opacity 0.1s cubic-bezier(0.7, 0, 0.84, 0); */
-}
+/* .project-card:hover .project-thumb-img { */
+/*   opacity: 1; */
+/*   transition: opacity 0.1s cubic-bezier(0.7, 0, 0.84, 0); */
+/* } */
 
 .project-info {
   display: flex;

@@ -7,3 +7,7 @@
     </UMain>
   </UApp>
 </template>
+
+<script setup lang="ts" vapor>
+
+</script>
