@@ -10,14 +10,17 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "nuxt-studio",
   ],
+  devtools: { enabled: true },
+  css: ["~/assets/css/main.css"],
+  compatibilityDate: "2024-04-03",
   eslint: {
     config: {
       stylistic: {
-        indent: "tab",
         semi: true,
-      }
+        quotes: "double",
+      },
 
-    }
+    },
   },
   fonts: {
     families: [
@@ -27,11 +30,5 @@ export default defineNuxtConfig({
     ],
   },
 
-
-
-
   image: {},
-  devtools: { enabled: true },
-  compatibilityDate: "2024-04-03",
-  css: ["~/assets/css/main.css"],
 });
