@@ -10,6 +10,15 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "nuxt-studio",
   ],
+  eslint: {
+    config: {
+      stylistic: {
+        indent: "tab",
+        semi: true,
+      }
+
+    }
+  },
   fonts: {
     families: [
       { name: "Playfair Display", provider: "google" },
@@ -17,6 +26,10 @@ export default defineNuxtConfig({
       { name: "JetBrains Mono", provider: "google" },
     ],
   },
+
+
+
+
   image: {},
   devtools: { enabled: true },
   compatibilityDate: "2024-04-03",
