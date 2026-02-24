@@ -1,4 +1,4 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
 const projectSchema = z.object({
   title: z.string(),
@@ -16,23 +16,23 @@ const projectSchema = z.object({
     alt: z.string(),
   })).optional(),
   thumbnail: z.string().optional(),
-})
+});
 
 export default defineContentConfig({
   collections: {
     content: defineCollection({
-      type: 'page',
-      source: '*.md',
+      type: "page",
+      source: "*.md",
     }),
     animation: defineCollection({
-      type: 'page',
-      source: 'animation/*.md',
+      type: "page",
+      source: "animation/*.md",
       schema: projectSchema,
     }),
     software: defineCollection({
-      type: 'page',
-      source: 'software/*.md',
+      type: "page",
+      source: "software/*.md",
       schema: projectSchema,
     }),
   },
-})
+});
