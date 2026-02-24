@@ -121,7 +121,7 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 .content :deep(h3),
 .content :deep(h4),
 .content :deep(p) {
-  max-width: 35rem;
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
 }
