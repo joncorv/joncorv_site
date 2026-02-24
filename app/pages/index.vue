@@ -1,23 +1,34 @@
 <script setup lang="ts">
-const { data: animationProjects } = await useAsyncData('animation', () => queryCollection('animation').all())
-const { data: softwareProjects } = await useAsyncData('software', () => queryCollection('software').all())
+const { data: animationProjects } = await useAsyncData("animation", () => queryCollection("animation").all());
+const { data: softwareProjects } = await useAsyncData("software", () => queryCollection("software").all());
 
 const allProjects = computed(() => [
   ...(animationProjects.value || []),
   ...(softwareProjects.value || []),
-])
+]);
 </script>
 
 <template>
   <UContainer>
     <div class="page">
+      <div class="project-hero" />
 
-      <div class="project-hero"></div>
-
-      <div v-if="allProjects.length" class="project-grid">
-        <NuxtLink v-for="project in allProjects" :key="project.id" :to="project.path" class="project-card">
+      <div
+        v-if="allProjects.length"
+        class="project-grid"
+      >
+        <NuxtLink
+          v-for="project in allProjects"
+          :key="project.id"
+          :to="project.path"
+          class="project-card"
+        >
           <div class="project-thumb">
-            <NuxtImg :src="project.thumbnail" alt="Project thumbnail" class="project-thumb-img" />
+            <NuxtImg
+              :src="project.thumbnail"
+              alt="Project thumbnail"
+              class="project-thumb-img"
+            />
           </div>
           <div class="project-info">
             <span class="project-title">{{ project.title }}</span>
@@ -26,7 +37,9 @@ const allProjects = computed(() => [
         </NuxtLink>
       </div>
 
-      <div v-else>Projects not found!</div>
+      <div v-else>
+        Projects not found!
+      </div>
     </div>
   </UContainer>
 </template>

@@ -1,18 +1,24 @@
 <script setup>
-const slug = useRoute().params.slug
+const slug = useRoute().params.slug;
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
-  return queryCollection('animation').path(`/animation/${slug}`).first()
-})
+  return queryCollection("animation").path(`/animation/${slug}`).first();
+});
 </script>
 
 <template>
   <UContainer>
     <div class="page">
-
-      <p v-if="project.client" class="page-client">{{ project.client.toUpperCase() }}</p>
+      <p
+        v-if="project.client"
+        class="page-client"
+      >
+        {{ project.client.toUpperCase() }}
+      </p>
 
       <!-- <h1 class="page-title">{{ project.title }}</h1> -->
-      <h1 class="page-title">{{ project.description }}</h1>
+      <h1 class="page-title">
+        {{ project.description }}
+      </h1>
       <!-- <p v-if="project.description" class="page-description">{{ project.description }}</p> -->
 
       <!-- <div class="meta"> -->
@@ -20,10 +26,25 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
       <!--   <span v-if="project.date">{{ project.date }}</span> -->
       <!-- </div> -->
 
-      <div v-if="project.tools?.length" class="tags">
-        <UBadge v-for="tag in project.tags" :key="tag" class="font-bold rounded-full">{{ tag.toUpperCase() }}</UBadge>
-        <UBadge v-for="tool in project.tools" :key="tool" color="error" class="font-bold rounded-full">{{
-          tool.toUpperCase() }}
+      <div
+        v-if="project.tools?.length"
+        class="tags"
+      >
+        <UBadge
+          v-for="tag in project.tags"
+          :key="tag"
+          class="font-bold rounded-full"
+        >
+          {{ tag.toUpperCase() }}
+        </UBadge>
+        <UBadge
+          v-for="tool in project.tools"
+          :key="tool"
+          color="error"
+          class="font-bold rounded-full"
+        >
+          {{
+            tool.toUpperCase() }}
         </UBadge>
       </div>
 
@@ -34,8 +55,6 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
       <div class="content">
         <ContentRenderer :value="project" />
       </div>
-
-
     </div>
   </UContainer>
 </template>
@@ -91,7 +110,6 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 .content {
   margin-top: 2rem;
 }
-
 
 .content :deep(*) {
   /* font-family: "Playfair Display"; */
