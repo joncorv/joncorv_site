@@ -6,19 +6,19 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'Vimeo video',
+    default: "Vimeo video",
   },
   autoplay: {
     type: Boolean,
     default: false,
   },
-})
+});
 
 const embedUrl = computed(() => {
-  const params = new URLSearchParams({ dnt: '1' })
-  if (props.autoplay) params.set('autoplay', '1')
-  return `https://player.vimeo.com/video/${props.id}?${params}`
-})
+  const params = new URLSearchParams({ dnt: "1" });
+  if (props.autoplay) params.set("autoplay", "1");
+  return `https://player.vimeo.com/video/${props.id}?${params}`;
+});
 </script>
 
 <template>

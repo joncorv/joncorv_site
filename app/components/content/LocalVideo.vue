@@ -8,12 +8,18 @@ defineProps({
     type: String,
     default: undefined,
   },
-})
+});
 </script>
 
 <template>
   <div class="video_wrapper">
-    <video :src="src" :poster="poster" loop playsinline controls />
+    <video
+      :src="src"
+      :poster="poster"
+      loop
+      playsinline
+      controls
+    />
   </div>
 </template>
 

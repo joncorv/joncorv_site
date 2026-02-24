@@ -6,7 +6,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'YouTube video',
+    default: "YouTube video",
   },
   autoplay: {
     type: Boolean,
@@ -16,14 +16,14 @@ const props = defineProps({
     type: Number,
     default: undefined,
   },
-})
+});
 
 const embedUrl = computed(() => {
-  const params = new URLSearchParams({ rel: '0' })
-  if (props.autoplay) params.set('autoplay', '1')
-  if (props.start !== undefined) params.set('start', String(props.start))
-  return `https://www.youtube.com/embed/${props.id}?${params}`
-})
+  const params = new URLSearchParams({ rel: "0" });
+  if (props.autoplay) params.set("autoplay", "1");
+  if (props.start !== undefined) params.set("start", String(props.start));
+  return `https://www.youtube.com/embed/${props.id}?${params}`;
+});
 </script>
 
 <template>

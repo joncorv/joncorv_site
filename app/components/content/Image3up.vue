@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const props = defineProps({
-  image_src_1: {
+  imageSource1: {
     type: String,
     default: "/images/dummy_image.png",
   },
-  image_src_2: {
+  imageSource2: {
     type: String,
     default: "/images/dummy_image.png",
   },
-  image_src_3: {
+  imageSource3: {
     type: String,
     default: "/images/dummy_image.png",
   },
-  split_right: {
+  splitRight: {
     type: Boolean,
     default: true,
   },
@@ -21,31 +21,28 @@ const props = defineProps({
     default: 50,
 
   },
-})
+});
 
-const containerHeight = computed(() => `${props.height}rem`)
+const containerHeight = computed(() => `${props.height}rem`);
 
-
-
-
-
-
-const split_result = computed(() => props.split_right ? "split-right" : "split-left")
-
+const split_result = computed(() => props.splitRight ? "split-right" : "split-left");
 </script>
 
 <template>
-  <div class="container" :class="split_result" :style="{ height: containerHeight }">
+  <div
+    class="container"
+    :class="split_result"
+    :style="{ height: containerHeight }"
+  >
     <div class="single">
-      <NuxtImg :src="image_src_1" />
+      <NuxtImg :src="imageSource1" />
     </div>
     <div class="split">
-      <NuxtImg :src="image_src_2" />
-      <NuxtImg :src="image_src_3" />
+      <NuxtImg :src="imageSource2" />
+      <NuxtImg :src="imageSource3" />
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .container {
