@@ -15,8 +15,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
   active: route.path.startsWith("/docs/components"),
 }, {
   label: "Figma",
-  icon: "i-simple-icons-figma",
-  to: "https://go.nuxt.com/figma-ui",
+  icon: "i-simple-icons-figma", to: "https://go.nuxt.com/figma-ui",
   target: "_blank",
 }, {
   label: "Releases",
@@ -30,7 +29,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
   <UHeader>
     <template #title>
       <p class="title_my_name">
-        JONATHAN CORRIVEAU
+        { JON CORV --> CG ARTIST & CREATIVE TECHNOLOGIST }
       </p>
     </template>
 
@@ -105,8 +104,8 @@ const items = computed<NavigationMenuItem[]>(() => [{
 
 <style scoped>
 .title_my_name {
-  /* font-family: "JetBrains Mono", monospace; */
-  font-family: "Space Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
+  /* font-family: "Space Mono", monospace; */
   font-size: .8em;
   font-weight: 600;
 }
