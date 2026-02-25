@@ -12,6 +12,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  aspectRatio: {
+    type: String,
+    default: "16 / 9",
+  },
 });
 
 const embedUrl = computed(() => {
@@ -37,7 +41,7 @@ const embedUrl = computed(() => {
 .embed-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: v-bind(aspectRatio);
 }
 
 iframe {

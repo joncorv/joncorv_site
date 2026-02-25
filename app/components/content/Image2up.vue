@@ -24,17 +24,11 @@ const height2 = computed(() => `${props.height2}rem`);
 
 <template>
   <div class="container">
-    <div
-      class="left_image"
-      :style="{ height: height1 }"
-    >
+    <div class="left_image" :style="{ height: height1 }">
       <NuxtImg :src="imageSource1" />
     </div>
 
-    <div
-      class="right_image"
-      :style="{ height: height2 }"
-    >
+    <div class="right_image" :style="{ height: height2 }">
       <NuxtImg :src="imageSource2" />
     </div>
   </div>
@@ -48,10 +42,6 @@ const height2 = computed(() => `${props.height2}rem`);
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
-
-/* .right_image { */
-/*   margin-top: 7rem; */
-/* } */
 
 .left_image,
 .right_image {
