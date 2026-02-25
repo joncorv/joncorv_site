@@ -102,12 +102,12 @@ const default_image = "images/dummy_image.png";
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .project-thumb {
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 12 / 9;
   border-radius: 1.5rem;
   position: relative;
   box-shadow:
@@ -118,7 +118,7 @@ const default_image = "images/dummy_image.png";
 
 .project-card:hover .project-thumb {
   box-shadow:
-    0 0 0 4px var(--color-purple-500),
+    0 0 0 4px var(--color-orange-500),
     12px 12px 24px rgba(0, 0, 0, 1);
 }
 
@@ -145,7 +145,7 @@ const default_image = "images/dummy_image.png";
 }
 
 .project-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -154,5 +154,6 @@ const default_image = "images/dummy_image.png";
   font-size: 0.75rem;
   opacity: 0.7;
   line-height: 1.3;
+  margin-bottom: 1rem;
 }
 </style>
