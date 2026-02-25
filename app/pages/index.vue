@@ -109,16 +109,17 @@ const default_image = "images/dummy_image.png";
   overflow: hidden;
   aspect-ratio: 16 / 10;
   border-radius: 1.5rem;
-  background-color: var(--ui-bg-elevated);
-  border: 2px solid var(--ui-border);
   position: relative;
-  /* transition: border-color 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
+  box-shadow:
+    0 0 0 0 transparent,
+    0 0 0 transparent;
+  transition: box-shadow 0.3s ease;
 }
 
 .project-card:hover .project-thumb {
-  border-color: var(--ui-border-active);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  /* transition: border-color 0.1s cubic-bezier(0.7, 0, 0.84, 0), box-shadow 0.075s cubic-bezier(0.7, 0, 0.84, 0); */
+  box-shadow:
+    0 0 0 4px var(--color-purple-500),
+    12px 12px 24px rgba(0, 0, 0, 1);
 }
 
 .project-thumb-img {
