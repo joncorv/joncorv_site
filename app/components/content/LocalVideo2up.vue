@@ -36,11 +36,27 @@ console.log("data-check", "right: ", rightOffsetValue.value, "top: ", marginTopV
 <template>
   <div class="videos">
     <div class="video-1-wrapper">
-      <video :src="src1" :poster="poster" loop playsinline controls />
+      <video
+        :src="src1"
+        :poster="poster"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      />
     </div>
 
     <div class="video-2-wrapper">
-      <video :src="src2" :poster="poster" loop playsinline controls />
+      <video
+        :src="src2"
+        :poster="poster"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      />
     </div>
   </div>
 </template>
