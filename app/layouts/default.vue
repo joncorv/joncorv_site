@@ -66,8 +66,11 @@ const items = computed<NavigationMenuItem[]>(() => [{
 
   <UFooter>
     <template #left>
+      <!-- <p class="text-muted text-sm"> -->
+      <!--   Copyright © {{ new Date().getFullYear() }} -->
+      <!-- </p> -->
       <p class="text-muted text-sm">
-        Copyright © {{ new Date().getFullYear() }}
+        Hand coded with <u>love and affection</u> ❤️ by me!
       </p>
     </template>
 
