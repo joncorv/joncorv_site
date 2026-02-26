@@ -19,7 +19,7 @@
   width: 100%;
   aspect-ratio: 16 / 7;
   border-radius: 1.5rem;
-  background-color: var(--ui-bg-elevated);
+  /* background-color: var(--ui-bg-elevated); */
   border: 2px solid var(--ui-border);
   margin-bottom: 1.5rem;
   display: flex;
