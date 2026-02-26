@@ -13,7 +13,8 @@ const default_image = "images/dummy_image.png";
 <template>
   <UContainer>
     <div class="page">
-      <div class="project-hero" />
+      <!-- <div class="project-hero" /> -->
+      <ProjectHero />
 
       <div
         v-if="allProjects.length"
@@ -64,14 +65,14 @@ const default_image = "images/dummy_image.png";
   margin-bottom: 2rem;
 }
 
-.project-hero {
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  border-radius: 1.5rem;
-  background-color: var(--ui-bg-elevated);
-  border: 2px solid var(--ui-border);
-  margin-bottom: 1.5rem;
-}
+/* .project-hero { */
+/*   width: 100%; */
+/*   aspect-ratio: 16 / 7; */
+/*   border-radius: 1.5rem; */
+/*   background-color: var(--ui-bg-elevated); */
+/*   border: 2px solid var(--ui-border); */
+/*   margin-bottom: 1.5rem; */
+/* } */
 
 .project-grid {
   display: grid;
