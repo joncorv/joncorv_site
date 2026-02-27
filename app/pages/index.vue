@@ -16,6 +16,12 @@ const default_image = "images/dummy_image.png";
       <!-- <div class="project-hero" /> -->
       <ProjectHero />
 
+      <hr class="horiz-rule">
+
+      <p class="text-category">
+        SELECTED WORKS
+      </p>
+
       <div
         v-if="allProjects.length"
         class="project-grid"
@@ -65,14 +71,17 @@ const default_image = "images/dummy_image.png";
   margin-bottom: 2rem;
 }
 
-/* .project-hero { */
-/*   width: 100%; */
-/*   aspect-ratio: 16 / 7; */
-/*   border-radius: 1.5rem; */
-/*   background-color: var(--ui-bg-elevated); */
-/*   border: 2px solid var(--ui-border); */
-/*   margin-bottom: 1.5rem; */
-/* } */
+.horiz-rule {
+  margin-top: 1rem;
+  border-color: var(--ui-border-accented);
+}
+
+.text-category {
+  font-size: 0.85rem;
+  color: var(--ui-text-muted);
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
 
 .project-grid {
   display: grid;
@@ -129,15 +138,7 @@ const default_image = "images/dummy_image.png";
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* filter: grayscale(1); */
-  /* opacity: 0.25; */
-  /* transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); */
 }
-
-/* .project-card:hover .project-thumb-img { */
-/*   opacity: 1; */
-/*   transition: opacity 0.1s cubic-bezier(0.7, 0, 0.84, 0); */
-/* } */
 
 .project-info {
   display: flex;
