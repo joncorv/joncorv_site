@@ -18,6 +18,19 @@ const projectSchema = z.object({
   thumbnail: z.string().optional(),
 });
 
+const articleSchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  date: z.string().optional(),
+  tools: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
+  images: z.array(z.object({
+    src: z.string(),
+    alt: z.string(),
+  })).optional(),
+  thumbnail: z.string().optional(),
+});
+
 export default defineContentConfig({
   collections: {
     content: defineCollection({
@@ -33,6 +46,11 @@ export default defineContentConfig({
       type: "page",
       source: "software/*.md",
       schema: projectSchema,
+    }),
+    articles: defineCollection({
+      type: "page",
+      source: "article/*.md",
+      schema: articleSchema,
     }),
   },
 });
