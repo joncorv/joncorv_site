@@ -22,29 +22,12 @@ const default_image = "images/dummy_image.png";
         SELECTED WORKS
       </p>
 
-      <div
-        v-if="allProjects.length"
-        class="project-grid"
-      >
-        <NuxtLink
-          v-for="project in allProjects"
-          :key="project.id"
-          :to="project.path"
-          class="project-card"
-        >
+      <div v-if="allProjects.length" class="project-grid">
+        <NuxtLink v-for="project in allProjects" :key="project.id" :to="project.path" class="project-card">
           <div class="project-thumb">
-            <NuxtImg
-              v-if="project.thumbnail"
-              :src="project.thumbnail"
-              alt="Project thumbnail"
-              class="project-thumb-img"
-            />
-            <NuxtImg
-              v-else
-              :src="default_image"
-              alt="Project thumbnail"
-              class="project-thumb-img"
-            />
+            <NuxtImg v-if="project.thumbnail" :src="project.thumbnail" alt="Project thumbnail"
+              class="project-thumb-img" />
+            <NuxtImg v-else :src="default_image" alt="Project thumbnail" class="project-thumb-img" />
           </div>
           <div class="project-info">
             <span class="project-title">{{ project.title }}</span>
@@ -128,7 +111,7 @@ const default_image = "images/dummy_image.png";
 
 .project-card:hover .project-thumb {
   box-shadow:
-    0 0 0 4px var(--color-orange-500),
+    0 0 0 4px var(--ui-text-highlighted),
     12px 12px 24px rgba(0, 0, 0, 1);
 }
 
