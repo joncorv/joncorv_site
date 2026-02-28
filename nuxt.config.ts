@@ -19,7 +19,6 @@ export default defineNuxtConfig({
         semi: true,
         quotes: "double",
       },
-
     },
   },
   fonts: {
@@ -31,4 +30,13 @@ export default defineNuxtConfig({
   },
 
   image: {},
+
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 300,
+      },
+    },
+  },
 });
