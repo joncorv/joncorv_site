@@ -28,9 +28,12 @@ const items = computed<NavigationMenuItem[]>(() => [{
 <template>
   <UHeader>
     <template #title>
-      <p class="title_my_name">
-        { JONCORV }
-      </p>
+      <div class="pill">
+        <p class="title_my_name">
+          JONCORV
+        </p>
+      </div>
+      <!-- <NuxtImg src="/images/logo_v01.png" height="200px" class="h-7" /> -->
     </template>
 
     <!-- <UNavigationMenu :items="items" /> -->
@@ -75,10 +78,22 @@ const items = computed<NavigationMenuItem[]>(() => [{
 </template>
 
 <style scoped>
+.pill {
+  font-weight: 250;
+  font-size: 1.25rem;
+  text-align: center;
+  text-anchor: middle;
+  border: 2px solid var(--ui-text-highlighted);
+  border-radius: 0.25rem;
+  padding: .1rem 0.5rem .1rem 0.5rem;
+  vertical-align: middle;
+  margin: 0 0rem 0 1rem;
+}
+
 .title_my_name {
   font-family: "JetBrains Mono", monospace;
   /* font-family: "Space Mono", monospace; */
-  font-size: .8em;
-  font-weight: 600;
+  font-size: 1em;
+  font-weight: 900;
 }
 </style>
