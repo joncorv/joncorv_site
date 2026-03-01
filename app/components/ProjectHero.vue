@@ -22,7 +22,7 @@
       <u><span class="type_italics">art with code</span></u>
       <span class="type">,</span>
       <br>
-      <span class="type"> and find joy in bringing others' visions to life.</span>
+      <span class="type"> and find joy in bringing ideas to life.</span>
 
     </p>
   </div>
@@ -47,7 +47,6 @@
   font-size: 2.5rem;
   text-align: left;
   margin: auto;
-
 }
 
 .type_italics {
@@ -59,7 +58,7 @@
   font-size: 1.25rem;
   text-align: center;
   text-anchor: middle;
-  border: 2px solid var(--ui-bg-elevated);
+  border: 2px solid var(--ui-text-highlighted);
   border-radius: 5rem;
   padding: .3rem 1rem .3rem 1rem;
   vertical-align: middle;
