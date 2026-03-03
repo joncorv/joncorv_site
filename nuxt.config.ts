@@ -13,6 +13,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   compatibilityDate: "2024-04-03",
+
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 300,
+      },
+    },
+  },
   eslint: {
     config: {
       stylistic: {
@@ -30,13 +39,4 @@ export default defineNuxtConfig({
   },
 
   image: {},
-
-  vite: {
-    server: {
-      watch: {
-        usePolling: true,
-        interval: 300,
-      },
-    },
-  },
 });
