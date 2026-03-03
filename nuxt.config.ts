@@ -18,6 +18,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   nitro: {
     preset: "cloudflare_pages",
+    // prerender: {
+    //   routes: ["/"],
+    //   crawlLinks: true,
+    // },
   },
   vite: {
     server: {
@@ -45,7 +49,7 @@ export default defineNuxtConfig({
   image: {},
   studio: {
     repository: {
-      provider: "github", // 'github' or 'gitlab'
+      provider: "github",
       owner: "joncorv",
       repo: "joncorv_site",
       branch: "main",
