@@ -15,7 +15,7 @@ const projectSchema = z.object({
     src: z.string(),
     alt: z.string(),
   })).optional(),
-  thumbnail: z.string().optional(),
+  thumbnail: z.string(),
 });
 
 const articleSchema = z.object({
