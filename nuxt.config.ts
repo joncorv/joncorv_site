@@ -15,6 +15,12 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
   css: ["~/assets/css/main.css"],
+  content: {
+    database: {
+      type: "d1",
+      bindingName: "DB",
+    },
+  },
   compatibilityDate: "2024-04-03",
   nitro: {
     preset: "cloudflare_pages",
