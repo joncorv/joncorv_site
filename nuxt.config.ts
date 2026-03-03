@@ -24,10 +24,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   nitro: {
     preset: "cloudflare_pages",
-    // prerender: {
-    //   routes: ["/"],
-    //   crawlLinks: true,
-    // },
+    prerender: {
+      routes: ["/"],
+      crawlLinks: true,
+    },
   },
   vite: {
     server: {
