@@ -11,9 +11,11 @@ export default defineNuxtConfig({
     "nuxt-studio",
   ],
   devtools: { enabled: true },
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
   css: ["~/assets/css/main.css"],
   compatibilityDate: "2024-04-03",
-
   vite: {
     server: {
       watch: {
@@ -37,6 +39,13 @@ export default defineNuxtConfig({
       { name: "JetBrains Mono", provider: "google" },
     ],
   },
-
   image: {},
+  studio: {
+    repository: {
+      provider: "github", // 'github' or 'gitlab'
+      owner: "joncorv",
+      repo: "joncorv_site",
+      branch: "main",
+    },
+  },
 });
