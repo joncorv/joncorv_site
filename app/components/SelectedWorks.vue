@@ -20,6 +20,7 @@ const allProjects = computed(() => [
       :src="project.thumbnail"
       :title="project.title"
       :description="project.description"
+      width="600px"
     />
   </div>
 

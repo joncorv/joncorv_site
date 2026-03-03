@@ -32,6 +32,7 @@ const props = defineProps({
         :src="props.src"
         alt="Project thumbnail"
         class="project-thumb-img"
+        preload
       />
     </div>
     <div class="project-info">
