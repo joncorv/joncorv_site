@@ -1,0 +1,7 @@
+name = "joncorv-site"
+compatibility_date = "2024-04-03"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "joncorv-site-db"
+database_id = "e789fad4-e830-4560-bc0d-088055e9edef"
