@@ -4,7 +4,7 @@
 <template>
   <UContainer>
     <div class="page">
-      <ProjectHero />
+      <LandingHero />
       <CategorySeparator title="SELECTED WORKS" />
       <SelectedWorks />
     </div>

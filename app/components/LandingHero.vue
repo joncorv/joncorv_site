@@ -17,14 +17,21 @@
       <br>
       <div class="single-line">
         <span class="type">I work at </span>
-        <div class="pill">
-          <NuxtImg
-            src="/images/logos/wtbr_white_v3.png"
-            width="2.5rem"
-            class="h-5"
-          />
-          WTBR
-        </div>
+        <NuxtLink
+          to="https://wtbr.tv"
+          target="_blank"
+          external
+          no-prefetch
+        >
+          <div class="pill">
+            <NuxtImg
+              src="/images/logos/wtbr_white_v3.png"
+              width="2.5rem"
+              class="h-5"
+            />
+            WTBR
+          </div>
+        </NuxtLink>
         <span class="type"> where I make </span>
         <span class="type"> &nbsp;</span>
         <u><span class="type_italics">art with code</span></u>
