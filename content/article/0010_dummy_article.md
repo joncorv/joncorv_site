@@ -1,7 +1,7 @@
 ---
 title: Why Every Animator Should Learn to Code
 description: A look at how picking up even basic programming skills can make you a more versatile artist.
-date: "2025-09-12"
+date: "12 September, 2025"
 tools:
   - After Effects
   - Python
@@ -21,31 +21,26 @@ images:
 
 <!-- :Image1up{width=2.2 height=1 src="/images/animation/bowling/thumb.webp"} -->
 
-When I started working in motion graphics, the idea of writing code felt completely foreign. I was a visual person — I thought in keyframes, easing curves, and color palettes, not functions and loops. 
+The entry point is After Effects expressions. You alt-click a stopwatch and type a little JavaScript directly in the timeline. Most animators have already done this without thinking of it as coding.
 
-But somewhere between client deadline number forty and a particularly tedious batch-rename task, I opened a Python script someone had posted online and ran it. It worked. And everything changed.
+```js
+wiggle(3, 20)
+```
 
-## The Threshold Moment
+That's it. That's code. And you already understand what it does.
 
-The entry point for most animators is After Effects expressions. They're short snippets of JavaScript-flavored code that live right inside your timeline. A `wiggle()` expression, a `loopOut()`, a value linked to a slider control — these are the first glimpses most of us get at what code can do. And the key insight is that you probably already understand the logic. You've been thinking about values changing over time for your entire career.
+## You don't need to go deep
 
-## What You Actually Need to Learn
+Knowing a handful of things gets you 80% of the value:
 
-You don't need to become a software engineer. The goal is fluency, not mastery. Focus on:
+- **Variables** — a value has a name and a type
+- **Conditionals** — `if/else` to make things respond to other things
+- **Loops** — do this thing N times, or for every file in a folder
 
-- **Variables and types** — understanding that a value is either a number, a string, or an array covers 80% of what you'll encounter in expressions.
-- **Conditionals** — `if/else` logic lets you create responsive, dynamic animations that react to other layers or external data.
-- **Loops** — automating repetitive tasks, whether in a script or a render pipeline, is where the real time savings live.
-- **Reading documentation** — the ability to look something up and apply it is more valuable than memorization.
+The rest you look up when you need it.
 
-## The Practical Wins
+## The practical stuff
 
-Once I started writing basic Python, the first thing I automated was folder structure setup for new projects. A single script now creates my entire project tree, drops in standard assets, and names everything consistently. What used to take ten minutes of clicking now takes three seconds.
+Once I learned basic Python, the first thing I wrote set up my whole project folder in one command. Then batch renaming frames. Then a script that reads a CSV and spits out title cards in After Effects. None of it was clever — just enough to stop doing the boring parts by hand.
 
-After that came render queue management, file delivery scripts, and eventually a tool that reads a CSV and auto-generates title cards in After Effects via scripting. None of these required deep programming knowledge — just enough to solve the specific problem in front of me.
-
-## It Makes You Think Differently
-
-Beyond the practical automation wins, learning to code changes how you approach motion work. You start seeing patterns. You start thinking about systems rather than one-off solutions. An animation that loops isn't just a creative choice — it's a function that returns to its initial state. A kinetic type sequence isn't just cool looking — it's data being rendered through a set of rules.
-
-That shift in thinking makes you better at both disciplines.
+The mental shift matters too. You start seeing animation as systems rather than one-off solutions. That makes you better at both.

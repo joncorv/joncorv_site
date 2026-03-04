@@ -1,7 +1,7 @@
 ---
-title: From Motion Graphics to the Web — Learning JavaScript as an Animator
+title: From Motion Graphics to JavaScript
 description: CSS animations and JavaScript give motion designers a new canvas. Here's what the transition actually looks like, and why your existing skills matter more than you'd think.
-date: "2026-01-22"
+date: "22 January,2026"
 tools:
   - JavaScript
   - CSS
@@ -21,40 +21,50 @@ images:
     alt: A browser preview of a smooth text reveal animation built with CSS
 ---
 
-A few years into professional motion work, I started noticing that a lot of the most interesting animation happening wasn't in video — it was on websites. Scroll-triggered reveals, kinetic typography that responded to cursor movement, interactive data visualizations that felt alive. The production pipeline was completely different, but the underlying goal was exactly the same: make things move in ways that feel good.
+A lot of the most interesting animation happening right now isn't in video — it's in browsers. Scroll-triggered reveals, type that follows the cursor, interactive data viz. Same goal as motion work, totally different pipeline.
 
-Learning JavaScript as an animator is a strange experience. Some parts are easier than you'd expect. Some parts are conceptually alien in ways that take a while to unpack.
+## What carries over
 
-## What's Familiar
+Easing vocabulary is identical. `ease-in-out`, bezier curves — same model as After Effects, different syntax:
 
-**Timing and easing** — CSS transitions and JavaScript animation libraries use the same easing vocabulary you already know. `ease-in-out`, `linear`, bezier curves — it's the same model as After Effects, just written differently. Your instinct for what feels right translates immediately.
+```css
+.box {
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+```
 
-**Sequencing** — Libraries like GSAP (GreenSock Animation Platform) have a timeline object that works almost exactly like an After Effects timeline. You add tweens to specific positions in time, they play in sequence or in parallel, and you can scrub through them. The mental model maps cleanly.
-
-**Property-based animation** — Web animation is mostly animating CSS properties: position, opacity, scale, color. These are the same concepts you've been working with for years, just expressed differently.
-
-## What's Different
-
-**The DOM** — Web animation operates on HTML elements, and understanding the Document Object Model (how HTML is structured and accessed via JavaScript) is the conceptual foundation. It's not hard, but it's genuinely new. An element is like a layer; a stylesheet is like layer properties; JavaScript is the scripting you use to change those properties over time.
-
-**Interactivity** — Web animation can react to user input in real time. A hover, a scroll position, a click — events trigger animation in response. This is a fundamentally different paradigm from frame-by-frame timeline work, and it opens up modes of expression that don't exist in video.
-
-**No render button** — Changes are live. Save the file, switch to the browser, refresh. The feedback loop is extremely tight, which is both exhilarating and disorienting at first.
-
-## Where to Start
-
-GSAP is the best entry point for animators coming to the web. It's a mature, well-documented JavaScript animation library used on thousands of professional sites, and it was designed to feel natural to people who think in timelines:
+And GSAP's timeline API maps almost directly to how you already think:
 
 ```js
 gsap.timeline()
   .from(".headline", { opacity: 0, y: 40, duration: 0.6, ease: "power2.out" })
-  .from(".subhead", { opacity: 0, y: 20, duration: 0.4, ease: "power2.out" }, "-=0.2");
+  .from(".subhead",  { opacity: 0, y: 20, duration: 0.4, ease: "power2.out" }, "-=0.2")
+  .from(".body",     { opacity: 0,         duration: 0.3 }, "-=0.1");
 ```
 
-That reads almost like an After Effects sequence description. The API is designed to be legible.
+Tweens, sequencing, overlap offsets — same mental model.
 
-## The Career Angle
+## What's new
 
-Motion designers who can build web animations are significantly more versatile — and in most markets, more hireable. Brand campaigns increasingly live on websites. UI motion work is an entire discipline. Interactive storytelling is growing. The overlap between "animator" and "front-end developer" is widening, and sitting at that intersection is a useful place to be.
+**Events** replace the render button. Animation responds to what the user does:
 
-You don't need to become a full-stack engineer. You need enough JavaScript to build the motion work you care about. That bar is achievable, and the path from After Effects expressions to GSAP timelines is shorter than it looks.
+```js
+document.querySelector(".btn").addEventListener("mouseenter", () => {
+  gsap.to(".btn", { scale: 1.05, duration: 0.2 });
+});
+```
+
+**ScrollTrigger** is where things get fun:
+
+```js
+gsap.from(".panel", {
+  scrollTrigger: { trigger: ".panel", start: "top 80%" },
+  opacity: 0, y: 60, duration: 0.8
+});
+```
+
+No render button. Save, switch to browser, refresh. The feedback loop is tight.
+
+## Where to start
+
+Install GSAP, open a blank HTML file, and try to recreate something you've already built in After Effects. The translation work teaches you more than any tutorial.

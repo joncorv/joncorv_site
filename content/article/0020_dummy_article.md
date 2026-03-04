@@ -1,7 +1,7 @@
 ---
-title: Getting Started with After Effects Expressions
+title: After Effects Expressions for Noobs
 description: Expressions are the gateway drug for animators learning to code. Here's how to approach them without feeling lost, and the handful you'll use constantly.
-date: "2025-10-28"
+date: "28 October, 2025"
 tools:
   - After Effects
   - JavaScript
@@ -18,44 +18,43 @@ images:
     alt: The expression editor open in After Effects showing a wiggle expression
 ---
 
-Expressions in After Effects are the shortest path from "I'm an animator" to "I'm an animator who codes." They don't require any setup, no IDE, no terminal — just alt-click a stopwatch, and you're writing code directly in your composition. They're small, they're scoped to a single property, and the feedback is instant and visual. For anyone who's ever been intimidated by programming, this is the ideal starting point.
+Alt-click a stopwatch. Type some code. Done — you're writing expressions.
 
-## What an Expression Actually Is
+No setup, no IDE, no terminal. The feedback is instant and visual, which makes this the best possible way to start learning code as an animator.
 
-An expression is a small piece of JavaScript that After Effects evaluates every frame to determine the value of a property. Instead of a keyframe saying "position is 540, 960 at 2 seconds," an expression says "position is calculated by this formula at every frame." The result can be static, or it can change dynamically based on time, other layers, or external controls.
+## The four you'll use everywhere
 
-## The Core Four
-
-These are the expressions that appear in almost every professional motion graphics project:
-
-### wiggle()
+**wiggle** — shake a layer organically
 ```js
-wiggle(frequency, amplitude)
+wiggle(3, 20) // 3x per second, 20px max offset
 ```
-Randomly offsets a value over time. `wiggle(3, 20)` on a position property shakes a layer three times per second with a maximum offset of 20 pixels. Essential for organic, handmade-feeling animation.
 
-### loopOut()
+**loopOut** — loop your keyframes forever
 ```js
-loopOut("cycle")
+loopOut("cycle")    // repeats forward
+loopOut("pingpong") // reverses each loop
 ```
-Makes your keyframes loop indefinitely. Apply it to any animated property and the animation repeats from the last keyframe back to the first. `"pingpong"` makes it reverse direction on each loop.
 
-### time
+**time** — drive anything with the clock
 ```js
-time * 360
+time * 90 // slow spin. crank it up for faster
 ```
-`time` is a built-in variable that holds the current time in seconds. Multiplying it by a rotation value creates a constantly spinning layer. Simple and powerful.
 
-### value
+**value** — offset whatever's already keyframed
 ```js
-value + [0, -50]
+value + [0, -50] // push the existing position up by 50px
 ```
-`value` refers to whatever the property's current value is, including any keyframed value. This lets you offset or modify the existing animation without replacing it.
 
-## Connecting Properties with pickWhip
+## Linking properties
 
-The pickWhip is a UI tool that writes an expression for you — drag it from one property to another and After Effects generates the reference path automatically. This is how you link a text layer's opacity to a slider control, or connect a shape's scale to a null object. You don't need to know the path syntax; just use the pickWhip and read what it generates.
+Drag the pickWhip from one property to another and AE writes the expression for you. Useful for tying a layer's opacity to a slider, or locking scale to a null.
 
-## A Practical Starting Project
+```js
+thisComp.layer("Control").effect("Opacity")("Slider")
+```
 
-Take any animation you've already built and add one expression to it. A wiggle on the camera position, a loopOut on a repeating shape, a time-based rotation on a background element. Don't try to learn everything at once — expressions reward experimentation, and the best way to learn them is to break something and figure out why.
+You don't need to write that by hand — just read it after the pickWhip generates it, and it'll start making sense.
+
+## Just start
+
+Take any animation you've already built. Add one expression. Break it. Fix it. That's the whole method.
