@@ -30,16 +30,17 @@ const allProjects = computed(() => [
 </template>
 
 <style scoped>
-.page-title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 640px) {

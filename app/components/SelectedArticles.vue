@@ -16,8 +16,16 @@ const selectedArticles = computed(() => [
       :key="article.id"
       :to="article.path"
     >
-      <div>
-        <h1>{{ article.title }}</h1>
+      <div class="single-article">
+        <p class="article-date">
+          {{ article.date }}
+        </p>
+        <p class="article-title">
+          {{ article.title }}
+        </p>
+        <p class="article-description">
+          {{ article.description }}
+        </p>
       </div>
     </NuxtLink>
   </div>
@@ -27,4 +35,21 @@ const selectedArticles = computed(() => [
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.articles-container {
+  margin-bottom: 1.5rem;
+}
+
+.single-article {
+  margin-bottom: 2rem;
+
+}
+
+.article-title {
+  font-family: "Playfair Display";
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: left;
+  margin: auto;
+}
+</style>
