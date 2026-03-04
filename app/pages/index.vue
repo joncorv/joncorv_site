@@ -7,7 +7,7 @@
       <LandingHero />
       <CategorySeparator title="SELECTED WORKS" />
       <SelectedWorks />
-      <CategorySeparator title="SELECTED ARTICLES" />
+      <CategorySeparator title="MY BLOG --> RUMINATIONS FROM THE DARK SIDE " />
       <SelectedArticles />
     </div>
   </UContainer>
