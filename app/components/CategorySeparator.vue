@@ -23,7 +23,8 @@ const props = defineProps({
 
 .text-category {
   font-size: 0.85rem;
-  color: var(--ui-text-muted);
+  font-weight: 600;
+  color: var(--ui-text-accented);
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
