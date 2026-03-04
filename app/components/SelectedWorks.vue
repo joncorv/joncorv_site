@@ -9,23 +9,19 @@ const allProjects = computed(() => [
 </script>
 
 <template>
-  <div
-    v-if="allProjects.length"
-    class="project-grid"
-  >
-    <ProjectThumbnail
-      v-for="project in allProjects"
-      :key="project.id"
-      :path="project.path"
-      :src="project.thumbnail"
-      :title="project.title"
-      :description="project.description"
-      width="600px"
-    />
+  <div v-if="allProjects.length" class="project-grid">
+    <ProjectThumbnail v-for="project in allProjects" :key="project.id" :path="project.path" :src="project.thumbnail"
+      :title="project.title" :description="project.description" width="600px" />
   </div>
 
   <div v-else>
     Projects not found!
+  </div>
+
+  <div class="button-container">
+    <NuxtLink to="">
+      <UButton color="neutral" size="xl" class="font-bold rounded-full">More Work --></UButton>
+    </NuxtLink>
   </div>
 </template>
 
@@ -34,7 +30,7 @@ const allProjects = computed(() => [
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
 }
 
 .page-title {
@@ -61,5 +57,16 @@ const allProjects = computed(() => [
   .project-card:nth-child(n+5) {
     grid-column: span 2;
   }
+}
+
+.button-container {
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  justify-content: start;
+  /* align-items: end; */
+  flex-direction: row;
 }
 </style>
