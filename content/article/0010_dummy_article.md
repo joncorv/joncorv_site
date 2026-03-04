@@ -1,6 +1,6 @@
 ---
 title: Why Every Animator Should Learn to Code
-description: A look at how picking up even basic programming skills can transform your workflow, open new creative avenues, and make you a more versatile motion designer.
+description: A look at how picking up even basic programming skills can make you a more versatile artist.
 date: "2025-09-12"
 tools:
   - After Effects
@@ -19,7 +19,11 @@ images:
     alt: A terminal window with a Python script automating file renaming
 ---
 
-When I started working in motion graphics, the idea of writing code felt completely foreign. I was a visual person — I thought in keyframes, easing curves, and color palettes, not functions and loops. But somewhere between client deadline number forty and a particularly tedious batch-rename task, I opened a Python script someone had posted online and ran it. It worked. And everything changed.
+<!-- :Image1up{width=2.2 height=1 src="/images/animation/bowling/thumb.webp"} -->
+
+When I started working in motion graphics, the idea of writing code felt completely foreign. I was a visual person — I thought in keyframes, easing curves, and color palettes, not functions and loops. 
+
+But somewhere between client deadline number forty and a particularly tedious batch-rename task, I opened a Python script someone had posted online and ran it. It worked. And everything changed.
 
 ## The Threshold Moment
 
