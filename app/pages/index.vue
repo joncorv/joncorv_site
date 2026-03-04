@@ -7,6 +7,8 @@
       <LandingHero />
       <CategorySeparator title="SELECTED WORKS" />
       <SelectedWorks />
+      <CategorySeparator title="SELECTED ARTICLES" />
+      <SelectedArticles />
     </div>
   </UContainer>
 </template>
