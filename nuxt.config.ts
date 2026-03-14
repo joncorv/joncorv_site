@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/fonts",
     "nuxt-studio",
+    "@vueuse/nuxt",
   ],
   devtools: { enabled: true },
   app: {
