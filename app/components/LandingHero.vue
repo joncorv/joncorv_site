@@ -1,66 +1,81 @@
 <script setup lang="ts">
+const el = ref(null);
+const { width } = useElementSize(el);
 
+const br_visibility = computed(() => {
+  return width.value > 900;
+});
 </script>
 
 <template>
-  <div class="container">
-    <div class="type">
-      <span class="type">I'm Jonathan Corriveau, a San Francisco-based </span>
+  <div
+    ref="el"
+    class="hero-container"
+  >
+    <span>a little about me: {{ width }} </span>
+    <div class="type-normal">
+      <span class="type-normal">I'm Jonathan Corriveau, a San Francisco-based </span>
       <br>
       <u><span class="type_italics">CG artist</span></u>
-      <span class="type">, </span>
+      <span class="type-normal">, </span>
       <u><span class="type_italics">coder</span></u>
 
       <span class="type_italics">, & </span>
       <u><span class="type_italics">perpetual student</span></u>.
       <br>
       <br>
-      <div class="single-line">
-        <span class="type">I work at </span>
-        <NuxtLink
-          to="https://wtbr.tv"
-          target="_blank"
-          external
-          no-prefetch
-        >
-          <div class="pill">
-            <NuxtImg
-              src="/images/logos/wtbr_white_v3.png"
-              width="2.5rem"
-              class="h-5"
-            />
-            WTBR
-          </div>
-        </NuxtLink>
-        <span class="type"> where I make </span>
-        <span class="type"> &nbsp;</span>
-        <u><span class="type_italics">art with code</span></u>
-        <span class="type">,</span>
-      </div>
+      <!-- <div class="single-line"> -->
+      <span class="type-normal">I work at </span>
+      <NuxtLink
+        to="https://wtbr.tv"
+        target="_blank"
+        external
+        no-prefetch
+      >
+        <div class="pill">
+          <NuxtImg
+            src="/images/logos/wtbr_white_v3.png"
+            width="2.5rem"
+            class="h-5"
+          />
+          WTBR
+        </div>
+      </NuxtLink>
+      <span class="type-normal"> where I make </span>
+      <span class="type-normal"> &nbsp;</span>
+      <u><span class="type_italics">art with code</span></u>
+      <span class="type-normal">,</span>
+      <!-- </div> -->
       <br>
-      <span class="type"> and find joy in bringing ideas to life.</span>
+      <span class="type-normal"> and find joy in bringing ideas to life.</span>
     </div>
   </div>
 </template>
 
 <style scoped>
-.container {
+.hero-container {
   width: 100%;
-  aspect-ratio: 16 / 7;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-right: 1.4rem;
+  padding-left: 1.4rem;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* background-color: rgb(100, 100, 100); */
+  /* aspect-ratio: 16 / 7; */
 }
 
 .type_italics,
-.type {
+.type-normal {
   font-family: "Playfair Display";
   font-weight: 500;
-  font-size: 2.5rem;
-  text-align: left;
+  /* font-size: 2.3rem; */
+  font-size: clamp(1.1rem, 4vw, 2.3rem);
+  text-align: center;
   margin: auto;
 }
 
@@ -78,22 +93,22 @@
 
 .pill {
   font-weight: 250;
-  font-size: 1.25rem;
+  font-size: 0.55em;
   text-align: center;
   text-anchor: middle;
   border: 2px solid var(--ui-text-highlighted);
   border-radius: 5rem;
-  padding: .3rem 1rem .3rem 1rem;
+  padding: .3em 1em .3em 1em;
   vertical-align: middle;
-  margin: 0 0rem 0 0rem;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
-  height: 3rem;
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
+  gap: 0.8em;
+  height: 2em;
+  width: 6em;
+  margin-left: 0.6em;
+  margin-right: 0.6em;
 }
 
 u {
