@@ -9,9 +9,19 @@ const allProjects = computed(() => [
 </script>
 
 <template>
-  <div v-if="allProjects.length" class="project-grid">
-    <ProjectThumbnail v-for="project in allProjects" :key="project.id" :path="project.path" :src="project.thumbnail"
-      :title="project.title" :description="project.description" width="600px" />
+  <div
+    v-if="allProjects.length"
+    class="project-grid"
+  >
+    <ProjectThumbnail
+      v-for="project in allProjects"
+      :key="project.id"
+      :path="project.path"
+      :src="project.thumbnail"
+      :title="project.title"
+      :description="project.description"
+      width="600px"
+    />
   </div>
 
   <div v-else>
@@ -20,7 +30,11 @@ const allProjects = computed(() => [
 
   <div class="button-container">
     <NuxtLink to="">
-      <UButton color="neutral" size="xl" class="font-bold rounded-full">More Work --></UButton>
+      <UButton
+        color="neutral"
+        size="xl"
+        class="font-bold rounded-full"
+      >More Work --></UButton>
     </NuxtLink>
   </div>
 </template>
