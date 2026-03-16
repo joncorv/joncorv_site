@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const el = ref(null);
-const { width } = useElementSize(el);
-
-const br_visibility = computed(() => {
-  return width.value > 900;
-});
+// const el = ref(null);
+// const { width } = useElementSize(el);
+//
+// const br_visibility = computed(() => {
+//   return width.value > 900;
+// });
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const br_visibility = computed(() => {
     ref="el"
     class="hero-container"
   >
-    <span>a little about me: {{ width }} </span>
+    <!-- <span>a little about me  </span> -->
     <div class="type-normal">
       <span class="type-normal">I'm Jonathan Corriveau, a San Francisco-based </span>
       <br>
@@ -35,8 +35,8 @@ const br_visibility = computed(() => {
         <div class="pill">
           <NuxtImg
             src="/images/logos/wtbr_white_v3.png"
-            width="2.5rem"
-            class="h-5"
+            width="2.5em"
+            class="buffalo-image"
           />
           WTBR
         </div>
@@ -74,7 +74,7 @@ const br_visibility = computed(() => {
   font-family: "Playfair Display";
   font-weight: 500;
   /* font-size: 2.3rem; */
-  font-size: clamp(1.1rem, 4vw, 2.3rem);
+  font-size: clamp(1.1rem, 3vw, 2.3rem);
   text-align: center;
   margin: auto;
 }
@@ -104,11 +104,15 @@ const br_visibility = computed(() => {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.8em;
+  gap: 0.4em;
   height: 2em;
   width: 6em;
   margin-left: 0.6em;
   margin-right: 0.6em;
+}
+.buffalo-image {
+  height: 1em;
+
 }
 
 u {
