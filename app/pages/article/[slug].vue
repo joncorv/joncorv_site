@@ -12,7 +12,10 @@ const { data: article } = await useAsyncData(`article-${slug}`, () => {
     <!--   height="1" -->
     <!--   src="/images/animation/bowling/thumb.webp" -->
     <!-- /> -->
-    <div v-if="article" class="page">
+    <div
+      v-if="article"
+      class="page"
+    >
       <p class="page-client">
         RUMINATIONS ON THINGS
       </p>
@@ -21,7 +24,10 @@ const { data: article } = await useAsyncData(`article-${slug}`, () => {
       <h1 class="page-title">
         {{ article.title }}
       </h1>
-      <p v-if="article.description" class="page-description">
+      <p
+        v-if="article.description"
+        class="page-description"
+      >
         {{ article.description }}
       </p>
 
@@ -30,11 +36,26 @@ const { data: article } = await useAsyncData(`article-${slug}`, () => {
       <!--   <span v-if="project.date">{{ project.date }}</span> -->
       <!-- </div> -->
 
-      <div v-if="article.tools?.length" class="tags">
-        <UBadge v-for="tag in article.tags" :key="tag" class="font-bold rounded-full">
+      <div
+        v-if="article.tools?.length"
+        class="tags"
+      >
+        <UBadge
+          v-for="tag in article.tags"
+          :key="tag"
+          color="neutral"
+          variant="subtle"
+          class="font-bold rounded-full"
+        >
           {{ tag.toUpperCase() }}
         </UBadge>
-        <UBadge v-for="tool in article.tools" :key="tool" color="error" class="font-bold rounded-full">
+        <UBadge
+          v-for="tool in article.tools"
+          :key="tool"
+          color="neutral"
+          variant="subtle"
+          class="font-bold rounded-full"
+        >
           {{
             tool.toUpperCase() }}
         </UBadge>
