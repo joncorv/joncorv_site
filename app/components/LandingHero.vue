@@ -14,7 +14,7 @@
   >
     <!-- <span>a little about me  </span> -->
     <div class="type-normal">
-      <span class="type-normal">I'm Jonathan Corriveau, a San Francisco-based </span>
+      <span class="type-normal">I'm Jonathan Corriveau, a San Francisco based </span>
       <br>
       <u><span class="type_italics">CG artist</span></u>
       <span class="type-normal">, </span>
@@ -74,7 +74,7 @@
   font-family: "Playfair Display";
   font-weight: 500;
   /* font-size: 2.3rem; */
-  font-size: clamp(1.1rem, 3vw, 2.3rem);
+  font-size: clamp(1.0rem, 3vw, 2.3rem);
   text-align: center;
   margin: auto;
 }
@@ -96,7 +96,7 @@
   font-size: 0.55em;
   text-align: center;
   text-anchor: middle;
-  border: 2px solid var(--ui-text-highlighted);
+  border: 0.12em solid var(--ui-text-highlighted);
   border-radius: 5rem;
   padding: .3em 1em .3em 1em;
   vertical-align: middle;
@@ -111,14 +111,14 @@
   margin-right: 0.6em;
 }
 .buffalo-image {
-  height: 1em;
+  height: 0.85em;
 
 }
 
 u {
   text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 6px;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.15em;
   /* text-decoration-color: red; */
 }
 </style>
