@@ -36,6 +36,8 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
         <UBadge
           v-for="tag in project.tags"
           :key="tag"
+          color="neutral"
+          variant="subtle"
           class="font-bold rounded-full"
         >
           {{ tag.toUpperCase() }}
@@ -43,7 +45,8 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
         <UBadge
           v-for="tool in project.tools"
           :key="tool"
-          color="error"
+          color="neutral"
+          variant="subtle"
           class="font-bold rounded-full"
         >
           {{
