@@ -18,16 +18,9 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
         {{ project.client.toUpperCase() }}
       </p>
 
-      <!-- <h1 class="page-title">{{ project.title }}</h1> -->
       <h1 class="page-title">
         {{ project.description }}
       </h1>
-      <!-- <p v-if="project.description" class="page-description">{{ project.description }}</p> -->
-
-      <!-- <div class="meta"> -->
-      <!--   <span v-if="project.client">{{ project.client }}</span> -->
-      <!--   <span v-if="project.date">{{ project.date }}</span> -->
-      <!-- </div> -->
 
       <div
         v-if="project.tools?.length"
@@ -73,15 +66,17 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 
 .page-client {
   font-size: 0.8rem;
+  line-height: 2;
   color: var(--ui-text-muted);
-  margin-bottom: -0.5rem;
+  /* margin-bottom: -0.5rem; */
 }
 
 .page-title {
   font-family: "Playfair Display";
   font-size: 3.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  line-height: 1.0;
+  margin-bottom: 1.1rem;
 }
 
 .page-description {
