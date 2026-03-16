@@ -23,7 +23,7 @@ const height2 = computed(() => `${props.height2}rem`);
 </script>
 
 <template>
-  <div class="container">
+  <div class="hero-container">
     <div
       class="left_image"
       :style="{ height: height1 }"
@@ -41,7 +41,7 @@ const height2 = computed(() => `${props.height2}rem`);
 </template>
 
 <style scoped>
-.container {
+.hero-container {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;

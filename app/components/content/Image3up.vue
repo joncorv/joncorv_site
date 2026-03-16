@@ -30,7 +30,7 @@ const split_result = computed(() => props.splitRight ? "split-right" : "split-le
 
 <template>
   <div
-    class="container"
+    class="hero-container"
     :class="split_result"
     :style="{ height: containerHeight }"
   >
@@ -45,7 +45,7 @@ const split_result = computed(() => props.splitRight ? "split-right" : "split-le
 </template>
 
 <style scoped>
-.container {
+.hero-container {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
@@ -53,7 +53,7 @@ const split_result = computed(() => props.splitRight ? "split-right" : "split-le
   margin-top: 3rem;
 }
 
-.container.split-left {
+.hero-container.split-left {
   flex-direction: row-reverse;
 }
 

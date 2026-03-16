@@ -33,7 +33,7 @@ console.log(aspectRatio.value);
 </script>
 
 <template>
-  <div class="container">
+  <div class="hero-container">
     <div class="image">
       <NuxtImg :src="src" />
     </div>
@@ -41,7 +41,7 @@ console.log(aspectRatio.value);
 </template>
 
 <style scoped>
-.container {
+.hero-container {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
