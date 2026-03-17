@@ -3,15 +3,20 @@
 
 
 * {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
   font-feature-settings: "liga" 1, "calt" 1;
 }
 
 code, pre, kbd, samp, .font-mono {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 :root {
+  /* --font-sans: "Manrope", sans-serif; */
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Playfair Display", "Crimson Pro", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
   --ui-text-dimmed: var(--color-stone-400);
   --ui-text-muted: var(--color-stone-500);
   --ui-text-toned: var(--color-stone-600);
