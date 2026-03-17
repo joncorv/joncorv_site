@@ -3,15 +3,14 @@
 
 
 * {
-  font-family: "Playfair Display", Georgia, serif;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Manrope", sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
 }
 
 code, pre, kbd, samp, .font-mono {
-  font-family: "Space Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
 }
-/**/
+
 :root {
   --ui-text-dimmed: var(--color-stone-400);
   --ui-text-muted: var(--color-stone-500);
