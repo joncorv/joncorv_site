@@ -41,7 +41,7 @@ const selectedArticles = computed(() => [
         size="xl"
         class="font-bold rounded-full"
         label="More Articles"
-        trailing-icon="lucide:arrow-up-right"
+        trailing-icon="lucide:external-link"
       />
     </NuxtLink>
   </div>
@@ -62,14 +62,14 @@ const selectedArticles = computed(() => [
 }
 
 .article-date {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   color: var(--ui-text-muted);
   margin-bottom: 0.1rem;
 }
 
 .article-title {
-  font-family: "Playfair Display";
+  font-family: var(--font-serif);
   font-weight: 800;
   font-size: 2rem;
   text-align: left;
@@ -78,7 +78,7 @@ const selectedArticles = computed(() => [
 
 .article-description {
   /* font-style: italic; */
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   color: var(--ui-text-muted);
   max-width: 45rem;
   margin-top: 0.2rem;

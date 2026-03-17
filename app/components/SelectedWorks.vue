@@ -34,7 +34,9 @@ const allProjects = computed(() => [
         color="neutral"
         size="xl"
         class="font-bold rounded-full"
-      >More Work --></UButton>
+        label="More Work"
+        trailing-icon="lucide:external-link"
+      />
     </NuxtLink>
   </div>
 </template>
