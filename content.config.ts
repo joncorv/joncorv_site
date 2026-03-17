@@ -2,6 +2,7 @@ import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
 const projectSchema = z.object({
   title: z.string(),
+  subtitle: z.string().optional(),
   description: z.string().optional(),
   date: z.string().optional(),
   client: z.string().optional(),
