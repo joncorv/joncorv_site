@@ -53,6 +53,7 @@ export default defineNuxtConfig({
       { name: "JetBrains Mono", provider: "google" },
       { name: "Manrope", provider: "google" },
       { name: "Plus Jakarta Sans", provider: "google" },
+      { name: "Crimson Pro", provider: "google" },
     ],
   },
   icon: {
