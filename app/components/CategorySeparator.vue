@@ -24,6 +24,7 @@ const props = defineProps({
 .text-category {
   font-size: 0.85rem;
   font-weight: 600;
+  font-family: "JetBrains Mono", monospace;
   color: var(--ui-text-accented);
   margin-top: 0.5rem;
   margin-bottom: 2rem;
