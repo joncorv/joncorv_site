@@ -40,7 +40,9 @@ const selectedArticles = computed(() => [
         color="neutral"
         size="xl"
         class="font-bold rounded-full"
-      >More Articles --></UButton>
+        label="More Articles"
+        trailing-icon="lucide:arrow-up-right"
+      />
     </NuxtLink>
   </div>
 </template>
@@ -60,6 +62,7 @@ const selectedArticles = computed(() => [
 }
 
 .article-date {
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.9rem;
   color: var(--ui-text-muted);
   margin-bottom: 0.1rem;
@@ -75,6 +78,7 @@ const selectedArticles = computed(() => [
 
 .article-description {
   /* font-style: italic; */
+  font-family: "JetBrains Mono", monospace;
   color: var(--ui-text-muted);
   max-width: 45rem;
   margin-top: 0.2rem;
@@ -105,7 +109,6 @@ a:nth-child(even) .article-description {
   margin-right: 0;
   display: flex;
   justify-content: start;
-  /* align-items: end; */
   flex-direction: row;
   margin-bottom: 3rem;
 }
