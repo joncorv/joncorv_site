@@ -15,7 +15,7 @@
     <!-- <span>a little about me  </span> -->
     <div class="type-normal">
       <span class="type-normal">I'm Jonathan Corriveau, a San Francisco based </span>
-      <br>
+      <!-- <br> -->
       <u><span class="type_italics">CG artist</span></u>
       <span class="type-normal">, </span>
       <u><span class="type_italics">coder</span></u>
@@ -24,7 +24,6 @@
       <u><span class="type_italics">perpetual student</span></u>.
       <br>
       <br>
-      <!-- <div class="single-line"> -->
       <span class="type-normal">I work at </span>
       <NuxtLink
         to="https://wtbr.tv"
@@ -33,11 +32,11 @@
         no-prefetch
       >
         <div class="pill">
-          <NuxtImg
-            src="/images/logos/wtbr_white_v3.png"
-            width="2.5em"
+          <Icon
+            name="local-icons:buffalo"
             class="buffalo-image"
           />
+
           WTBR
         </div>
       </NuxtLink>
@@ -45,8 +44,7 @@
       <span class="type-normal"> &nbsp;</span>
       <u><span class="type_italics">art with code</span></u>
       <span class="type-normal">,</span>
-      <!-- </div> -->
-      <br>
+      <!-- <br> -->
       <span class="type-normal"> and find joy in bringing ideas to life.</span>
     </div>
   </div>
@@ -57,16 +55,20 @@
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  padding-right: 1.4rem;
-  padding-left: 1.4rem;
+  /* padding-right: 1.4rem; */
+  /* padding-left: 1.4rem; */
+  padding-left: auto;
+  padding-right: auto;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background-color: rgb(100, 100, 100); */
-  /* aspect-ratio: 16 / 7; */
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
 }
 
 .type_italics,
@@ -74,7 +76,7 @@
   font-family: "Playfair Display";
   font-weight: 500;
   /* font-size: 2.3rem; */
-  font-size: clamp(1.0rem, 3vw, 2.3rem);
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
   text-align: center;
   margin: auto;
 }
@@ -92,6 +94,7 @@
 }
 
 .pill {
+  font-family: "JetBrains Mono", monospace;
   font-weight: 250;
   font-size: 0.55em;
   text-align: center;
@@ -110,9 +113,17 @@
   margin-left: 0.6em;
   margin-right: 0.6em;
 }
-.buffalo-image {
-  height: 0.85em;
 
+.pill:hover {
+  /* background-color: var(--ui-text-highlighted); */
+  background: linear-gradient(0deg, var(--ui-text-highlighted), var(--ui-text-toned));
+  color: var(--ui-bg-elevated);
+}
+
+.buffalo-image {
+  height: 1em;
+  aspect-ratio: 367 / 227;
+  color: currentColor;
 }
 
 u {
