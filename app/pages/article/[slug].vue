@@ -84,12 +84,13 @@ const { data: article } = await useAsyncData(`article-${slug}`, () => {
 }
 
 .page-client {
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--ui-text-muted);
 }
 
 .page-title {
-  font-family: "Playfair Display";
+  font-family: var(--font-serif);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -124,8 +125,7 @@ const { data: article } = await useAsyncData(`article-${slug}`, () => {
 }
 
 .content :deep(*) {
-  /* font-family: "Playfair Display"; */
-  font-family: "JetBrains Mono";
+  font-family: var(--font-mono);
 }
 
 /* .content :deep(h1), */

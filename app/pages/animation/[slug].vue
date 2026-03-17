@@ -31,9 +31,9 @@ const hasTools = computed(() => {
         {{ project.description }}
       </h1>
 
-      <!-- <h1 class="page-subtitle"> -->
-      <!--   {{ project.subtitle }} -->
-      <!-- </h1> -->
+      <h1 class="page-subtitle">
+        {{ project.subtitle }}
+      </h1>
 
       <div
         v-if="hasTools"
@@ -78,6 +78,7 @@ const hasTools = computed(() => {
 }
 
 .page-client {
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   line-height: 2;
   color: var(--ui-text-muted);
@@ -85,7 +86,7 @@ const hasTools = computed(() => {
 }
 
 .page-description {
-  font-family: "Playfair Display";
+  font-family: var(--font-serif);
   font-size: 3.25rem;
   color: var( --ui-text-highlighted);
   font-weight: 700;
@@ -129,7 +130,7 @@ const hasTools = computed(() => {
 
 .content :deep(*) {
   /* font-family: "Playfair Display"; */
-  /* font-family: "JetBrains Mono"; */
+  /* font-family: var(--font-mono); */
 }
 
 .content :deep(h1),
