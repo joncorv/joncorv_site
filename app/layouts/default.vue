@@ -122,7 +122,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
 }
 
 .title-my-name {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   /* font-family: "Space Mono", monospace; */
   font-size: 1em;
   font-weight: 900;
