@@ -8,32 +8,38 @@ const props = defineProps({
     type: String,
     default: "/images/dummy_image.png",
   },
-  height1: {
+  width: {
     type: Number,
-    default: 50,
+    default: 16,
   },
-  height2: {
+  height: {
     type: Number,
-    default: 50,
+    default: 9,
   },
 });
 
-const height1 = computed(() => `${props.height1}rem`);
-const height2 = computed(() => `${props.height2}rem`);
+const aspectRatio = computed(() => {
+  if (props.width > 0 && props.height > 0) {
+    const width_string = String(props.width);
+    const height_string = String(props.height);
+    return width_string + " / " + height_string;
+  }
+  else {
+    return "16 / 9";
+  }
+});
 </script>
 
 <template>
   <div class="hero-container">
     <div
       class="left_image"
-      :style="{ height: height1 }"
     >
       <NuxtImg :src="imageSource1" />
     </div>
 
     <div
       class="right_image"
-      :style="{ height: height2 }"
     >
       <NuxtImg :src="imageSource2" />
     </div>
@@ -43,6 +49,7 @@ const height2 = computed(() => `${props.height2}rem`);
 <style scoped>
 .hero-container {
   display: flex;
+  aspect-ratio: v-bind(aspectRatio);
   flex-direction: row;
   gap: 1.5rem;
   margin-bottom: 3rem;
