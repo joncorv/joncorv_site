@@ -69,9 +69,8 @@
 
 .type_italics,
 .type-normal {
-  font-family: "Playfair Display";
+  font-family: var(--font-serif);
   font-weight: 500;
-  /* font-size: 2.3rem; */
   font-size: clamp(1.5rem, 4vw, 2.3rem);
   text-align: center;
   margin: auto;
@@ -82,21 +81,12 @@
   font-weight: 900;
 }
 
-.single-line {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 .pill {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-weight: 250;
   font-size: 0.55em;
   text-align: center;
   text-anchor: middle;
-  border: 0.12em solid var(--ui-text-highlighted);
-  border-radius: 5rem;
   padding: .3em 1em .3em 1em;
   vertical-align: middle;
   display: inline-flex;
@@ -106,12 +96,22 @@
   gap: 0.4em;
   height: 2em;
   width: 6em;
-  margin-left: 0.6em;
-  margin-right: 0.6em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+
+  border-radius: 5rem;
+  border-style: solid;
+  border-color: var(--ui-text-highlighted);
+  border-width: .12em;
+
+  background: linear-gradient(0deg, transparent, transparent);
+  color: var(--ui-text-highlighted);
+
+  transition: background 0.15s ease, color 0.15s ease;
+
 }
 
 .pill:hover {
-  /* background-color: var(--ui-text-highlighted); */
   background: linear-gradient(0deg, var(--ui-text-highlighted), var(--ui-text-toned));
   color: var(--ui-bg-elevated);
 }
