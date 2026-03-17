@@ -55,8 +55,6 @@
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  /* padding-right: 1.4rem; */
-  /* padding-left: 1.4rem; */
   padding-left: auto;
   padding-right: auto;
   border-radius: 1.5rem;
