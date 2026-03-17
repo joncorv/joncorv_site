@@ -51,9 +51,24 @@ export default defineNuxtConfig({
       { name: "Playfair Display", provider: "google" },
       { name: "Space Mono", provider: "google" },
       { name: "JetBrains Mono", provider: "google" },
+      { name: "Manrope", provider: "google" },
+      { name: "Plus Jakarta Sans", provider: "google" },
+    ],
+  },
+  icon: {
+    // provider: "none",
+    // clientBundle: {
+    //   scan: true,
+    // },
+    customCollections: [
+      {
+        prefix: "local-icons",
+        dir: "./app/assets/icons",
+      },
     ],
   },
   image: {},
+
   studio: {
     repository: {
       provider: "github",
