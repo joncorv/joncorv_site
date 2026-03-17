@@ -16,23 +16,37 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  width: {
+    type: Number,
+    default: 16,
+  },
   height: {
     type: Number,
-    default: 50,
+    default: 9,
 
   },
 });
 
-const containerHeight = computed(() => `${props.height}rem`);
+// const containerHeight = computed(() => `${props.height}rem`);
 
 const split_result = computed(() => props.splitRight ? "split-right" : "split-left");
+
+const aspectRatio = computed(() => {
+  if (props.width > 0 && props.height > 0) {
+    const width_string = String(props.width);
+    const height_string = String(props.height);
+    return width_string + " / " + height_string;
+  }
+  else {
+    return "16 / 9";
+  }
+});
 </script>
 
 <template>
   <div
     class="hero-container"
     :class="split_result"
-    :style="{ height: containerHeight }"
   >
     <div class="single">
       <NuxtImg :src="imageSource1" />
@@ -47,10 +61,12 @@ const split_result = computed(() => props.splitRight ? "split-right" : "split-le
 <style scoped>
 .hero-container {
   display: flex;
+  flex: 1;
   flex-direction: row;
   gap: 1.5rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
+  aspect-ratio: v-bind(aspectRatio);
 }
 
 .hero-container.split-left {
