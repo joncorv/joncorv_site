@@ -3,6 +3,15 @@ const slug = useRoute().params.slug;
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   return queryCollection("animation").path(`/animation/${slug}`).first();
 });
+
+const hasTools = computed(() => {
+  if (project.value?.tools || project.value?.tags) {
+    return true;
+  }
+  else {
+    return false;
+  }
+});
 </script>
 
 <template>
@@ -18,12 +27,16 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
         {{ project.client.toUpperCase() }}
       </p>
 
-      <h1 class="page-title">
+      <h1 class="page-description">
         {{ project.description }}
       </h1>
 
+      <!-- <h1 class="page-subtitle"> -->
+      <!--   {{ project.subtitle }} -->
+      <!-- </h1> -->
+
       <div
-        v-if="project.tools?.length"
+        v-if="hasTools"
         class="tags"
       >
         <UBadge
@@ -71,19 +84,20 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   /* margin-bottom: -0.5rem; */
 }
 
-.page-title {
+.page-description {
   font-family: "Playfair Display";
   font-size: 3.25rem;
+  color: var( --ui-text-highlighted);
   font-weight: 700;
   line-height: 1.0;
   margin-bottom: 1.1rem;
 }
 
-.page-description {
-  font-family: "Playfair Display";
-  font-size: 1.5rem;
-  color: var(--ui-text-muted);
-  margin-bottom: 1.5rem;
+.page-subtitle {
+  font-weight: 100;
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+  max-width: 60rem;
 }
 
 .meta {
@@ -115,7 +129,7 @@ const { data: project } = await useAsyncData(`animation-${slug}`, () => {
 
 .content :deep(*) {
   /* font-family: "Playfair Display"; */
-  font-family: "JetBrains Mono";
+  /* font-family: "JetBrains Mono"; */
 }
 
 .content :deep(h1),
