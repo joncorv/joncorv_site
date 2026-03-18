@@ -1,11 +1,22 @@
 <script setup lang="ts">
+const props = defineProps({
+  numProjects: {
+    type: Number,
+    default: 10,
+  },
+  landingPage: {
+    type: Boolean,
+    default: true,
+  },
+});
+
 const { data: animationProjects } = await useAsyncData("animation", () => queryCollection("animation").all());
 const { data: softwareProjects } = await useAsyncData("software", () => queryCollection("software").all());
 
 const allProjects = computed(() => [
   ...(animationProjects.value || []),
   ...(softwareProjects.value || []),
-].slice(0, 10));
+].slice(0, props.numProjects));
 </script>
 
 <template>
@@ -28,16 +39,31 @@ const allProjects = computed(() => [
     Projects not found!
   </div>
 
-  <div class="button-container">
-    <NuxtLink to="">
-      <UButton
-        color="neutral"
-        size="xl"
-        class="font-bold rounded-full"
-        label="More Work"
-        trailing-icon="lucide:external-link"
-      />
-    </NuxtLink>
+  <div
+    v-if="landingPage"
+    class="button-container"
+  >
+    <UButton
+      label="Check Out More Work"
+      to="/animation/all-projects"
+      color="neutral"
+      size="xl"
+      class="font-bold rounded-full"
+      trailing-icon="lucide:external-link"
+    />
+  </div>
+  <div
+    v-else
+    class="button-container"
+  >
+    <UButton
+      label="Go Back Home!"
+      to="/"
+      color="neutral"
+      size="xl"
+      class="font-bold rounded-full"
+      icon="lucide:home"
+    />
   </div>
 </template>
 
@@ -77,12 +103,11 @@ const allProjects = computed(() => [
 
 .button-container {
   margin-bottom: 6rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: 0;
   display: flex;
   justify-content: start;
-  /* align-items: end; */
   flex-direction: row;
 }
 </style>
