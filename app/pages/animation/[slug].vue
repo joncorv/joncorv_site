@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { BreadcrumbItem } from "@nuxt/ui";
+
 const slug = useRoute().params.slug;
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   return queryCollection("animation").path(`/animation/${slug}`).first();
@@ -12,10 +14,31 @@ const hasTools = computed(() => {
     return false;
   }
 });
+
+const items = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: "lucide:home",
+    to: "/",
+  },
+  {
+    label: "Projects",
+    icon: "lucide:box",
+    to: "/animation/all-projects",
+  },
+  {
+    label: project.value?.title,
+    icon: "lucide:link",
+    class: "text-(--ui-text-muted)",
+  },
+]);
 </script>
 
 <template>
   <UContainer>
+    <UBreadcrumb
+      :items="items"
+      class="mt-4"
+    />
     <div
       v-if="project"
       class="page"
@@ -87,13 +110,11 @@ const hasTools = computed(() => {
 
 .page-description {
   font-family: var(--font-serif);
-  /* font-size: 3.25rem; */
-  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-size: 3.25rem;
   color: var( --ui-text-highlighted);
   font-weight: 700;
   line-height: 1.0;
   margin-bottom: 1.1rem;
-  text-wrap: balance;
 }
 
 .page-subtitle {
@@ -101,7 +122,6 @@ const hasTools = computed(() => {
   font-size: 1.1rem;
   margin-bottom: 1.1rem;
   max-width: 60rem;
-  text-wrap: balance;
 }
 
 .meta {
