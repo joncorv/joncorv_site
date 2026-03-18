@@ -16,14 +16,14 @@
     <div class="type-normal">
       <span class="type-normal">I'm Jonathan Corriveau, a San Francisco based </span>
       <!-- <br> -->
-      <u><span class="type_italics">CG artist</span></u>
+      <u><span class="type_italics">CG Lead</span></u>
       <span class="type-normal">, </span>
-      <u><span class="type_italics">coder</span></u>
-
+      <u><span class="type_italics">Programmer</span></u>
       <span class="type_italics">, & </span>
-      <u><span class="type_italics">perpetual student</span></u>.
-      <br>
-      <br>
+      <u><span class="type_italics">Perpetual Student</span></u>.
+
+      <div class="cust-break" />
+
       <span class="type-normal">I work at </span>
       <NuxtLink
         to="https://wtbr.tv"
@@ -81,6 +81,11 @@
   font-weight: 900;
 }
 
+.cust-break {
+  margin-bottom: 0.8em;
+  display: block;
+}
+
 .pill {
   font-family: var(--font-mono);
   font-weight: 250;
@@ -104,16 +109,19 @@
   border-color: var(--ui-text-highlighted);
   border-width: .12em;
 
-  background: linear-gradient(0deg, transparent, transparent);
-  color: var(--ui-text-highlighted);
+  /* background: linear-gradient(0deg, transparent, transparent); */
+  /* color: var(--ui-text-highlighted); */
+
+  background: linear-gradient(0deg, var(--ui-text-highlighted), var(--ui-text-toned));
+  color: var(--ui-bg-elevated);
 
   transition: background 0.15s ease, color 0.15s ease;
 
 }
 
 .pill:hover {
-  background: linear-gradient(0deg, var(--ui-text-highlighted), var(--ui-text-toned));
-  color: var(--ui-bg-elevated);
+  background: linear-gradient(0deg, transparent, transparent);
+  color: var(--ui-text-highlighted);
 }
 
 .buffalo-image {
@@ -125,7 +133,7 @@
 u {
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
-  text-underline-offset: 0.15em;
+  text-underline-offset: 0.1em;
   /* text-decoration-color: red; */
 }
 </style>
