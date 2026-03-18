@@ -84,13 +84,17 @@ const props = defineProps({
 }
 
 .project-title {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .project-description {
-  font-size: 0.75rem;
+  /* font-size: 0.75em; */
+  font-size: clamp(0.75rem, 4vw, 0.9rem);
+  /* font-family: var(--font-mono); */
+  font-weight: 100;
   opacity: 0.7;
   line-height: 1.3;
   margin-bottom: 1rem;
