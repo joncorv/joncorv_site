@@ -105,12 +105,14 @@ const items = computed<BreadcrumbItem[]>(() => [
   font-size: 0.8rem;
   line-height: 2;
   color: var(--ui-text-muted);
+  margin-top: -0.5rem;
   /* margin-bottom: -0.5rem; */
 }
 
 .page-description {
   font-family: var(--font-serif);
-  font-size: 3.25rem;
+  /* font-size: 3.25rem; */
+  font-size: clamp(2.7rem, 4vw, 3.25rem);
   color: var( --ui-text-highlighted);
   font-weight: 700;
   line-height: 1.0;
