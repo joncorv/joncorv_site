@@ -15,7 +15,7 @@ const hasTools = computed(() => {
   }
 });
 
-const items = computed<BreadcrumbItem[]>(() => [
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     icon: "lucide:home",
     to: "/",
@@ -35,18 +35,9 @@ const items = computed<BreadcrumbItem[]>(() => [
 
 <template>
   <UContainer>
-    <UBreadcrumb
-      :items="items"
-      class="mt-4"
-    />
-    <div
-      v-if="project"
-      class="page"
-    >
-      <p
-        v-if="project.client"
-        class="page-client"
-      >
+    <UBreadcrumb :items="breadcrumbItems" class="mt-4" />
+    <div v-if="project" class="page">
+      <p v-if="project.client" class="page-client">
         {{ project.client.toUpperCase() }}
       </p>
 
@@ -62,22 +53,10 @@ const items = computed<BreadcrumbItem[]>(() => [
         v-if="hasTools"
         class="tags"
       >
-        <UBadge
-          v-for="tag in project.tags"
-          :key="tag"
-          color="neutral"
-          variant="subtle"
-          class="font-bold rounded-full"
-        >
+        <UBadge v-for="tag in project.tags" :key="tag" color="neutral" variant="subtle" class="font-bold rounded-full">
           {{ tag.toUpperCase() }}
         </UBadge>
-        <UBadge
-          v-for="tool in project.tools"
-          :key="tool"
-          color="neutral"
-          variant="subtle"
-          class="font-bold rounded-full"
-        >
+        <UBadge v-for="tool in project.tools" :key="tool" color="neutral" variant="subtle" class="font-bold rounded-full">
           {{
             tool.toUpperCase() }}
         </UBadge>
