@@ -3,67 +3,48 @@ const slug = useRoute().params.slug;
 const { data: article } = await useAsyncData(`article-${slug}`, () => {
   return queryCollection("articles").path(`/article/${slug}`).first();
 });
+
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: "lucide:home",
+    to: "/",
+  },
+  {
+    label: "Projects",
+    icon: "lucide:box",
+    to: "/animation/all-projects",
+  },
+  {
+    label: article.value?.title,
+    icon: "lucide:link",
+    class: "text-(--ui-text-muted)",
+  },
+]);
 </script>
 
 <template>
   <UContainer>
-    <!-- <Image1up -->
-    <!--   width="2.2" -->
-    <!--   height="1" -->
-    <!--   src="/images/animation/bowling/thumb.webp" -->
-    <!-- /> -->
-    <div
-      v-if="article"
-      class="page"
-    >
+    <div v-if="article" class="page">
+      <UBreadcrumb :items="breadcrumbItems" class="mt-4" />
       <p class="page-client">
         RUMINATIONS ON THINGS
       </p>
 
-      <!-- <h1 class="page-title">{{ project.title }}</h1> -->
       <h1 class="page-title">
         {{ article.title }}
       </h1>
-      <p
-        v-if="article.description"
-        class="page-description"
-      >
+      <p v-if="article.description" class="page-description">
         {{ article.description }}
       </p>
 
-      <!-- <div class="meta"> -->
-      <!--   <span v-if="project.client">{{ project.client }}</span> -->
-      <!--   <span v-if="project.date">{{ project.date }}</span> -->
-      <!-- </div> -->
-
-      <div
-        v-if="article.tools?.length"
-        class="tags"
-      >
-        <UBadge
-          v-for="tag in article.tags"
-          :key="tag"
-          color="neutral"
-          variant="subtle"
-          class="font-bold rounded-full"
-        >
+      <div v-if="article.tools?.length" class="tags">
+        <UBadge v-for="tag in article.tags" :key="tag" color="neutral" variant="subtle" class="font-bold rounded-full">
           {{ tag.toUpperCase() }}
         </UBadge>
-        <UBadge
-          v-for="tool in article.tools"
-          :key="tool"
-          color="neutral"
-          variant="subtle"
-          class="font-bold rounded-full"
-        >
-          {{
-            tool.toUpperCase() }}
+        <UBadge v-for="tool in article.tools" :key="tool" color="neutral" variant="subtle" class="font-bold rounded-full">
+          {{ tool.toUpperCase() }}
         </UBadge>
       </div>
-
-      <!-- <div v-if="project.tags?.length" class="tags"> -->
-      <!--   <UBadge v-for="tag in project.tags" :key="tag" class="font-bold rounded-full">{{ tag }}</UBadge> -->
-      <!-- </div> -->
 
       <div class="content">
         <ContentRenderer :value="article" />
