@@ -7,15 +7,8 @@ const selectedArticles = computed(() => [
 </script>
 
 <template>
-  <div
-    v-if="selectedArticles.length"
-    class="articles-container"
-  >
-    <NuxtLink
-      v-for="article in selectedArticles"
-      :key="article.id"
-      :to="article.path"
-    >
+  <div v-if="selectedArticles.length" class="articles-container">
+    <NuxtLink v-for="article in selectedArticles" :key="article.id" :to="article.path">
       <div class="single-article">
         <p class="article-date">
           {{ article.date?.toUpperCase() }}
@@ -35,14 +28,8 @@ const selectedArticles = computed(() => [
   </div>
 
   <div class="button-container">
-    <NuxtLink to="">
-      <UButton
-        color="neutral"
-        size="xl"
-        class="font-bold rounded-full"
-        label="More Articles"
-        trailing-icon="lucide:external-link"
-      />
+    <NuxtLink to="article/all-articles">
+      <UButton color="neutral" size="xl" class="font-bold rounded-full" label="More Articles" trailing-icon="lucide:external-link" />
     </NuxtLink>
   </div>
 </template>
