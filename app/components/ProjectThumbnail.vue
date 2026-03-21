@@ -19,6 +19,10 @@ const props = defineProps({
     type: String,
     // required: true,
   },
+  priority: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -32,7 +36,7 @@ const props = defineProps({
         :src="props.src"
         alt="Project thumbnail"
         class="project-thumb-img"
-        preload
+        :loading="props.priority ? 'eager' : 'lazy'"
       />
     </div>
     <div class="project-info">
