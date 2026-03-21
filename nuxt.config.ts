@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     server: {
       watch: {
         usePolling: true,
-        interval: 300,
+        interval: 100,
       },
     },
   },
