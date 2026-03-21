@@ -9,6 +9,8 @@
     <!-- <span>a little about me  </span> -->
     <div class="type-normal">
       <!-- NOTE:  Start First Paragraph -->
+      <span class="text-category">A little about me</span>
+      <br>
       <span class="type-normal">I'm Jonathan Corriveau, a San Francisco based </span>
       <span class="type_italics">CG Lead</span>
       <span class="type-normal">, </span>
@@ -35,6 +37,8 @@
 
       <div class="cust-break" />
 
+      <span class="text-category">Some software I'm working on</span>
+      <br>
       <span class="type-normal">Recently I built </span>
       <NuxtLink to="https://github.com/joncorv/filera" target="_blank" external no-prefetch>
         <div class="pill pill-2">
@@ -42,7 +46,7 @@
           FILERA
         </div>
       </NuxtLink>
-      <span class="type-normal">, a powerful cross platform batch file renaming app written in Rust 🦀 & Tauri.</span>
+      <span class="type-normal"> a powerful cross platform batch file renaming app written in Rust 🦀 & Tauri.</span>
 
       <!-- NOTE:  End last paragraph -->
     </div>
@@ -78,6 +82,15 @@
 .type_italics {
   font-style: italic;
   font-weight: 900;
+}
+
+.text-category {
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--ui-text-accented);
+  /* margin-top: 0.5rem; */
+  /* margin-bottom: 2rem; */
 }
 
 .cust-break {
