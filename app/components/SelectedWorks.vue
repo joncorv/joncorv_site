@@ -25,12 +25,13 @@ const allProjects = computed(() => [
     class="project-grid"
   >
     <ProjectThumbnail
-      v-for="project in allProjects"
+      v-for="(project, index) in allProjects"
       :key="project.id"
       :path="project.path"
       :src="project.thumbnail"
       :title="project.title"
       :description="project.description"
+      :priority="index < 4"
       width="600px"
     />
   </div>
