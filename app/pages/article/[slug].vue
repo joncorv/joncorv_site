@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import type { BreadcrumbItem } from "@nuxt/ui";
+
 const slug = useRoute().params.slug;
 const { data: article } = await useAsyncData(`article-${slug}`, () => {
   return queryCollection("articles").path(`/article/${slug}`).first();
 });
-
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     icon: "lucide:home",
