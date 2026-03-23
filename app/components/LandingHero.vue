@@ -9,44 +9,53 @@
     <!-- <span>a little about me  </span> -->
     <div class="type-normal">
       <!-- NOTE:  Start First Paragraph -->
-      <span class="text-category">A little about me</span>
-      <br>
-      <span class="type-normal">I'm Jonathan Corriveau, a San Francisco based </span>
-      <span class="type_italics">CG Lead</span>
-      <span class="type-normal">, </span>
-      <span class="type_italics">Programmer</span>
-      <span class="type_italics">, & </span>
-      <span class="type_italics">Perpetual Student</span>.
+
+      <!-- <span class="text-category">A little about me</span> -->
+      <!-- <br> -->
+      <span class="type-normal">I'm Jon, San Francisco based, perpetually curious, & probably reading </span>
+
+      <NuxtLink to="https://doc.rust-lang.org/stable/book/ch00-00-introduction.html" external no-prefetch>
+        <u><span class="type_italics">docs</span></u>
+      </NuxtLink>
+      <span class="type-normal"> right now.</span>
 
       <div class="cust-break" />
 
-      <span class="type-normal">I work at </span>
+      <!-- NOTE:  Start Second Paragraph -->
+      <span class="type-normal">I'm a CG Lead at </span>
       <NuxtLink to="https://wtbr.tv" target="_blank" external no-prefetch>
         <div class="pill pill-1">
           <Icon name="local-icons:buffalo" class="buffalo-image" />
           WTBR
         </div>
       </NuxtLink>
-
-      <span class="type-normal"> where I make</span>
-      <span class="type-normal">&nbsp;</span>
-      <span class="type_italics">art with code</span>
-      <span class="type-normal">,</span>
-      <!-- <br> -->
-      <span class="type-normal"> and find joy in bringing ideas to life.</span>
+      <span class="type-normal"> and a developer building with Rust, TypeScript, and Python. </span>
 
       <div class="cust-break" />
 
-      <span class="text-category">Some software I'm working on</span>
-      <br>
-      <span class="type-normal">Recently I built </span>
+      <!-- NOTE:  Start Third Paragraph -->
+      <span class="type-normal">I came up through animation and design, started writing code to solve problems the tools couldn't, and kept going until I shipped </span>
       <NuxtLink to="https://github.com/joncorv/filera" target="_blank" external no-prefetch>
         <div class="pill pill-2">
           <NuxtImg src="/images/filera/filera-64x64.png" class="filera-image" />
           FILERA
         </div>
       </NuxtLink>
-      <span class="type-normal"> a powerful cross platform batch file renaming app written in Rust 🦀 & Tauri.</span>
+      <span class="type-normal">.</span>
+
+      <div class="cust-break" />
+
+      <!-- NOTE:  Start Fourth Paragraph -->
+
+      <!-- <span class="type-normal">I work across the full range — 3D production to full-stack development.</span> -->
+      <span class="type-normal">I keep the energy up, I get the thing shipped, and I'm always learning something new.</span>
+
+      <div class="cust-break" />
+
+      <!-- NOTE:  Start Fifth Paragraph -->
+      <NuxtLink to="mailto:joncorv@gmail.com?subject=Hey Jon, let's chat." external no-prefetch>
+        <u><span class="type_italics">Let's talk →</span></u>
+      </NuxtLink>
 
       <!-- NOTE:  End last paragraph -->
     </div>
@@ -56,7 +65,7 @@
 <style scoped>
 .hero-container {
   width: 100%;
-  padding-top: 3rem;
+  padding-top: clamp(-8rem, 4vw, 2.0rem);
   padding-bottom: 3rem;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
@@ -64,7 +73,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 50rem;
+  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
   text-wrap: balance;
@@ -74,7 +83,7 @@
 .type-normal {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  font-size: clamp(1.2rem, 4vw, 2.3rem);
   text-align: center;
   margin: auto;
 }
