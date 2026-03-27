@@ -23,15 +23,19 @@ code, pre, kbd, samp, .font-mono {
   --ui-text: var(--color-stone-700);
   --ui-text-highlighted: var(--color-stone-900);
   --ui-text-inverted: white;
+
   --ui-bg: white;
   --ui-bg-muted: var(--color-stone-50);
   --ui-bg-elevated: var(--color-stone-100);
   --ui-bg-accented: var(--color-stone-200);
   --ui-bg-inverted: var(--color-stone-900);
+
   --ui-border: var(--color-stone-200);
   --ui-border-muted: var(--color-stone-200);
   --ui-border-accented: var(--color-stone-300);
   --ui-border-inverted: var(--color-stone-900);
+
+  --ui-bubble: var(--color-stone-800);
 }
 
 .dark {
@@ -52,5 +56,7 @@ code, pre, kbd, samp, .font-mono {
   --ui-border-muted: var(--color-stone-700);
   --ui-border-accented: var(--color-stone-700);
   --ui-border-inverted: white;
+
+  --ui-bubble: var(--color-blue-500);
 }
 
