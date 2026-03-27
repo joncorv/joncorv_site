@@ -14,9 +14,21 @@
       <!-- <br> -->
       <span class="type-normal">I'm Jon — San Francisco based, perpetually curious, & </span>
 
-      <NuxtLink to="https://doc.rust-lang.org/stable/book/ch00-00-introduction.html" external no-prefetch>
-        <u><span class="type_italics">probably reading docs</span></u>
+      <NuxtLink to="https://doc.rust-lang.org/stable/book/ch00-00-introduction.html" target="_blank" external no-prefetch>
+        <!-- <UTooltip -->
+        <!--   :content="{ -->
+        <!--     align: 'center', -->
+        <!--     // side: 'top', -->
+        <!--     sideOffset: 4, -->
+        <!--   }" -->
+        <!--   :delay-duration="0" -->
+        <!--   text="The rust book" -->
+        <!--   arrow -->
+        <!-- > -->
+        <u><span class="type_italics docs">probably reading docs</span></u>
+        <!-- </UTooltip> -->
       </NuxtLink>
+
       <span class="type-normal"> right now.</span>
 
       <div class="cust-break" />
@@ -24,10 +36,21 @@
       <!-- NOTE:  Start Second Paragraph -->
       <span class="type-normal">I'm a CG Lead at </span>
       <NuxtLink to="https://wtbr.tv" target="_blank" external no-prefetch>
-        <div class="pill pill-1">
-          <Icon name="local-icons:buffalo" class="buffalo-image" />
-          WTBR
-        </div>
+        <UTooltip
+          :content="{
+            align: 'center',
+            side: 'top',
+            sideOffset: 8,
+          }"
+          :delay-duration="0"
+          text="The best people on the planet!"
+          arrow
+        >
+          <div class="pill pill-1">
+            <Icon name="local-icons:buffalo" class="buffalo-image" />
+            WTBR
+          </div>
+        </UTooltip>
       </NuxtLink>
       <span class="type-normal"> and a developer building with Rust, TypeScript, and Python. </span>
 
@@ -35,11 +58,26 @@
 
       <!-- NOTE:  Start Third Paragraph -->
       <span class="type-normal">I came up through animation and design, started writing code to solve problems the tools couldn't, and kept going until I released </span>
+
       <NuxtLink to="https://github.com/joncorv/filera" target="_blank" external no-prefetch>
-        <div class="pill pill-2">
-          <NuxtImg src="/images/filera/filera-64x64.png" class="filera-image" />
-          FILERA
-        </div>
+
+        <UTooltip
+          :content="{
+            align: 'center',
+            // side: 'top',
+            sideOffset: 4,
+          }"
+          :delay-duration="0"
+          text="Let's organize your files together"
+          arrow
+        >
+
+          <div class="pill pill-2">
+            <NuxtImg src="/images/filera/filera-64x64.png" class="filera-image" />
+            FILERA
+          </div>
+
+        </UTooltip>
       </NuxtLink>
       <span class="type-normal">.</span>
 
@@ -54,7 +92,24 @@
 
       <!-- NOTE:  Start Fifth Paragraph -->
       <NuxtLink to="mailto:joncorv@gmail.com?subject=Hey Jon, let's chat." external no-prefetch>
-        <u><span class="type_italics">Let's talk →</span></u>
+
+        <UTooltip
+          :content="{
+            align: 'center',
+            side: 'top',
+            sideOffset: -4,
+          }"
+          :ui="{
+            content: 'text-xl h-8',
+            arrow: '',
+          }"
+          :delay-duration="0"
+          text="👋😎"
+          arrow
+        >
+          <u><span class="type_italics">Let's talk →</span></u>
+
+        </UTooltip>
       </NuxtLink>
 
       <!-- NOTE:  End last paragraph -->
