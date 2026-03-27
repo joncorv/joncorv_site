@@ -1,5 +1,42 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from "@nuxt/ui";
 
+const items = ref<DropdownMenuItem[]>([
+  // {
+  //   label: "My Work:",
+  //   icon: "i-lucide-user",
+  //   type: "label",
+  // },
+  {
+    label: "Projects",
+    icon: "lucide:boom-box",
+  },
+  {
+    label: "Articles",
+    icon: "lucide:notebook-pen",
+  },
+  {
+    type: "separator",
+  },
+  // {
+  //   label: "My Socials:",
+  //   // icon: "i-lucide-user",
+  //   type: "label",
+  // },
+  {
+    label: "Email",
+    icon: "lucide:mail",
+  },
+  {
+    label: "Instagram",
+    icon: "simple-icons:instagram",
+  },
+  {
+    label: "LinkedIn",
+    icon: "simple-icons:linkedin",
+  },
+
+]);
 </script>
 
 <template>
@@ -11,18 +48,16 @@
     </template>
 
     <template #right>
-      <UColorModeButton />
-
-      <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/joncorv"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-        />
+      <UTooltip
+        text="Flashbang Toggle"
+        arrow
+      >
+        <UColorModeButton />
       </UTooltip>
+
+      <UDropdownMenu :items="items">
+        <UButton icon="lucide:menu" color="neutral" variant="ghost" />
+      </UDropdownMenu>
     </template>
   </UHeader>
 
