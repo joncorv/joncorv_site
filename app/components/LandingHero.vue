@@ -12,10 +12,10 @@
 
       <!-- <span class="text-category">A little about me</span> -->
       <!-- <br> -->
-      <span class="type-normal">I'm Jon, San Francisco based, perpetually curious, & probably reading </span>
+      <span class="type-normal">I'm Jon — San Francisco based, perpetually curious, & </span>
 
       <NuxtLink to="https://doc.rust-lang.org/stable/book/ch00-00-introduction.html" external no-prefetch>
-        <u><span class="type_italics">docs</span></u>
+        <u><span class="type_italics">probably reading docs</span></u>
       </NuxtLink>
       <span class="type-normal"> right now.</span>
 
@@ -34,7 +34,7 @@
       <div class="cust-break" />
 
       <!-- NOTE:  Start Third Paragraph -->
-      <span class="type-normal">I came up through animation and design, started writing code to solve problems the tools couldn't, and kept going until I shipped </span>
+      <span class="type-normal">I came up through animation and design, started writing code to solve problems the tools couldn't, and kept going until I released </span>
       <NuxtLink to="https://github.com/joncorv/filera" target="_blank" external no-prefetch>
         <div class="pill pill-2">
           <NuxtImg src="/images/filera/filera-64x64.png" class="filera-image" />
