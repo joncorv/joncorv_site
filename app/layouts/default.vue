@@ -2,18 +2,25 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 
 const items = ref<DropdownMenuItem[]>([
-  // {
-  //   label: "My Work:",
-  //   icon: "i-lucide-user",
-  //   type: "label",
-  // },
+
+  {
+    label: "Home",
+    icon: "lucide:home",
+    to: "/",
+  },
+  {
+    type: "separator",
+  },
   {
     label: "Projects",
     icon: "lucide:boom-box",
+    to: "/animation/all-projects",
   },
+
   {
     label: "Articles",
     icon: "lucide:notebook-pen",
+    to: "/animation/all-articles",
   },
   {
     type: "separator",
@@ -26,14 +33,25 @@ const items = ref<DropdownMenuItem[]>([
   {
     label: "Email",
     icon: "lucide:mail",
+    to: "mailto:joncorv@gmail.com?subject=Hey Jon, let's chat.",
+    external: true,
+    noPrefetch: true,
   },
   {
     label: "Instagram",
     icon: "simple-icons:instagram",
+    to: "https://instagram.com/joncorv",
+    external: true,
+    noPrefetch: true,
+    target: "_blank",
   },
   {
     label: "LinkedIn",
     icon: "simple-icons:linkedin",
+    to: "https://www.linkedin.com/in/joncorv/",
+    external: true,
+    noPrefetch: true,
+    target: "_blank",
   },
 
 ]);
