@@ -13,7 +13,7 @@ const items = ref<DropdownMenuItem[]>([
   },
   {
     label: "Projects",
-    icon: "lucide:boom-box",
+    icon: "lucide:drill",
     to: "/animation/all-projects",
   },
 
