@@ -40,10 +40,7 @@ const allProjects = computed(() => [
     Projects not found!
   </div>
 
-  <div
-    v-if="landingPage"
-    class="button-container"
-  >
+  <div v-if="landingPage" class="button-container">
     <UButton
       label="Check Out More Work"
       to="/animation/all-projects"
@@ -53,10 +50,7 @@ const allProjects = computed(() => [
       trailing-icon="lucide:external-link"
     />
   </div>
-  <div
-    v-else
-    class="button-container"
-  >
+  <div v-else class="button-container">
     <UButton
       label="Go Back Home!"
       to="/"

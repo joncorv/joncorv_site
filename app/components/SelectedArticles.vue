@@ -28,9 +28,14 @@ const selectedArticles = computed(() => [
   </div>
 
   <div class="button-container">
-    <NuxtLink to="article/all-articles">
-      <UButton color="neutral" size="xl" class="font-bold rounded-full" label="More Articles" trailing-icon="lucide:external-link" />
-    </NuxtLink>
+    <UButton
+      label="Check Out More Articles"
+      to="/article/all-articles"
+      color="neutral"
+      size="xl"
+      class="font-bold rounded-full"
+      trailing-icon="lucide:external-link"
+    />
   </div>
 </template>
 
