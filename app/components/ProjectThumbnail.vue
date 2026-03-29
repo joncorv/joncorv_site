@@ -69,7 +69,7 @@ const props = defineProps({
 
 .project-card:hover .project-thumb {
   box-shadow:
-    0 0 0 4px var(--ui-text-highlighted),
+    0 0 0 4px var(--color-neutral-300),
     12px 12px 24px rgba(0, 0, 0, 0.5);
 }
 
