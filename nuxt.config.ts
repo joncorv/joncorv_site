@@ -14,6 +14,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      title: "JONCORV: CG & CODE",
+    },
   },
   css: ["~/assets/css/main.css"],
   content: {
