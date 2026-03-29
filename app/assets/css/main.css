@@ -17,44 +17,44 @@ code, pre, kbd, samp, .font-mono {
   --font-serif: "Playfair Display", "Crimson Pro", Georgia, serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --ui-text-dimmed: var(--color-stone-400);
-  --ui-text-muted: var(--color-stone-500);
-  --ui-text-toned: var(--color-stone-600);
-  --ui-text: var(--color-stone-700);
-  --ui-text-highlighted: var(--color-stone-900);
+  --ui-text-dimmed: var(--color-mauve-400);
+  --ui-text-muted: var(--color-mauve-500);
+  --ui-text-toned: var(--color-mauve-600);
+  --ui-text: var(--color-mauve-700);
+  --ui-text-highlighted: var(--color-mauve-900);
   --ui-text-inverted: white;
 
   --ui-bg: white;
-  --ui-bg-muted: var(--color-stone-50);
-  --ui-bg-elevated: var(--color-stone-100);
-  --ui-bg-accented: var(--color-stone-200);
-  --ui-bg-inverted: var(--color-stone-900);
+  --ui-bg-muted: var(--color-mauve-50);
+  --ui-bg-elevated: var(--color-mauve-100);
+  --ui-bg-accented: var(--color-mauve-200);
+  --ui-bg-inverted: var(--color-mauve-900);
 
-  --ui-border: var(--color-stone-200);
-  --ui-border-muted: var(--color-stone-200);
-  --ui-border-accented: var(--color-stone-300);
-  --ui-border-inverted: var(--color-stone-900);
+  --ui-border: var(--color-mauve-200);
+  --ui-border-muted: var(--color-mauve-200);
+  --ui-border-accented: var(--color-mauve-300);
+  --ui-border-inverted: var(--color-mauve-900);
 
-  --ui-bubble: var(--color-stone-800);
+  --ui-bubble: var(--color-mauve-800);
 }
 
 .dark {
-  --ui-text-dimmed: var(--color-stone-500);
-  --ui-text-muted: var(--color-stone-400);
-  --ui-text-toned: var(--color-stone-300);
-  --ui-text: var(--color-stone-200);
-  --ui-text-highlighted: var(--color-stone-100);
-  --ui-text-inverted: var(--color-stone-900);
+  --ui-text-dimmed: var(--color-mauve-500);
+  --ui-text-muted: var(--color-mauve-400);
+  --ui-text-toned: var(--color-mauve-300);
+  --ui-text: var(--color-mauve-200);
+  --ui-text-highlighted: var(--color-mauve-100);
+  --ui-text-inverted: var(--color-mauve-900);
 
-  --ui-bg: var(--color-stone-900);
-  --ui-bg-muted: var(--color-stone-800);
-  --ui-bg-elevated: var(--color-stone-800);
-  --ui-bg-accented: var(--color-stone-700);
+  --ui-bg: var(--color-mauve-900);
+  --ui-bg-muted: var(--color-mauve-800);
+  --ui-bg-elevated: var(--color-mauve-800);
+  --ui-bg-accented: var(--color-mauve-700);
   --ui-bg-inverted: white;
 
-  --ui-border: var(--color-stone-800);
-  --ui-border-muted: var(--color-stone-700);
-  --ui-border-accented: var(--color-stone-700);
+  --ui-border: var(--color-mauve-800);
+  --ui-border-muted: var(--color-mauve-700);
+  --ui-border-accented: var(--color-mauve-700);
   --ui-border-inverted: white;
 
   --ui-bubble: var(--color-blue-500);
