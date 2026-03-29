@@ -20,16 +20,11 @@ const items = ref<DropdownMenuItem[]>([
   {
     label: "Articles",
     icon: "lucide:notebook-pen",
-    to: "/animation/all-articles",
+    to: "/article/all-articles",
   },
   {
     type: "separator",
   },
-  // {
-  //   label: "My Socials:",
-  //   // icon: "i-lucide-user",
-  //   type: "label",
-  // },
   {
     label: "Email",
     icon: "lucide:mail",
@@ -63,12 +58,16 @@ const items = ref<DropdownMenuItem[]>([
       <p class="title-my-name">
         JONCORV
       </p>
+      <p class="title-beta">
+        BETA v0.29
+      </p>
     </template>
 
     <template #right>
       <UTooltip
         text="Flashbang Toggle"
         arrow
+        :delay-duration="0"
       >
         <UColorModeButton />
       </UTooltip>
@@ -123,22 +122,18 @@ const items = ref<DropdownMenuItem[]>([
 </template>
 
 <style scoped>
-.pill-my-name {
-  font-weight: 250;
-  font-size: 1.1rem;
-  text-align: center;
-  text-anchor: middle;
-  border: 1.7px solid var(--ui-text-highlighted);
-  border-radius: 0.2rem;
-  padding: 0rem 0.2rem 0rem 0.2rem;
-  vertical-align: middle;
-  margin: 0 0rem 0 1rem;
-}
-
 .title-my-name {
   font-family: var(--font-mono);
   /* font-family: "Space Mono", monospace; */
   font-size: 1em;
   font-weight: 900;
+}
+
+.title-beta {
+  font-family: var(--font-mono);
+  font-size: 0.58em;
+  font-weight: 900;
+  padding-bottom: 0.18em;
+  color: var(--color-neutral-500);
 }
 </style>
