@@ -1,11 +1,24 @@
 <script setup lang="ts">
+import type { PageCollections } from "@nuxt/content";
+
+const props = defineProps({
+  dbName: {
+    type: String,
+    required: true,
+  },
+  categoryName: {
+    type: String,
+    required: true,
+  },
+});
+
+const dbNameKey = props.dbName as keyof PageCollections;
+
 const path = useRoute().path;
 
 const { data: surround_data } = await useAsyncData(`surround-${path}`, () => {
-  return queryCollectionItemSurroundings("animation", path);
+  return queryCollectionItemSurroundings(dbNameKey, path);
 });
-
-console.log("surround_data", surround_data.value);
 </script>
 
 <template>
@@ -13,7 +26,7 @@ console.log("surround_data", surround_data.value);
     <NuxtLink v-if="surround_data?.[0]" :to="surround_data?.[0].path" variant="link">
       <span class="pagination-item">
         <Icon name="lucide:move-left" class="mr-2" />
-        <span class="pagination-item-small">PREVIOUS PROJECT</span>
+        <span class="pagination-item-small">NEXT {{ props.categoryName.toUpperCase() }}</span>
         <br>
         <span class="pagination-item-large">{{ surround_data?.[0].title }}</span>
       </span>
@@ -23,7 +36,7 @@ console.log("surround_data", surround_data.value);
 
     <NuxtLink v-if="surround_data?.[1]" :to="surround_data?.[1].path" variant="link">
       <div class="pagination-item pagination-item-right">
-        <span class="pagination-item-small">NEXT PROJECT</span>
+        <span class="pagination-item-small">NEXT {{ props.categoryName.toUpperCase() }}</span>
         <Icon name="lucide:move-right" class="ml-2" />
         <br>
         <span class="pagination-item-large">{{ surround_data?.[1].title }}</span>
