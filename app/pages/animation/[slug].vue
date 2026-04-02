@@ -67,7 +67,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
         <ContentRenderer :value="project" />
       </div>
 
-      <LazyProjectPagination hydrate-on-idle next-item="This is some Next Level Stuff" prev-item="Previously was cool, now not" />
+      <LazyContentPagination db-name="animation" category-name="Project" hydrate-on-idle />
     </div>
     <UError v-else />
   </UContainer>
@@ -131,10 +131,10 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   margin-top: 2rem;
 }
 
-.content :deep(*) {
-  /* font-family: "Playfair Display"; */
-  /* font-family: var(--font-mono); */
-}
+/* .content :deep(*) { */
+/*   font-family: "Playfair Display"; */
+/*   font-family: var(--font-mono); */
+/* } */
 
 .content :deep(h1),
 .content :deep(h2),
