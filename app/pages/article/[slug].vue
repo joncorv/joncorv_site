@@ -50,6 +50,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
       <div class="content">
         <ContentRenderer :value="article" />
       </div>
+      <ProjectPagination next-item="This is some Next Level Stuff" prev-item="Previously was cool, now not" />
     </div>
     <UError v-else />
   </UContainer>
