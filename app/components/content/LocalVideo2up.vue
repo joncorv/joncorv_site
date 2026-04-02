@@ -29,8 +29,6 @@ const props = defineProps({
 const rightOffsetValue = computed(() => props.rightOffset + "rem");
 const marginTopValue = computed(() => props.marginTop + "rem");
 const marginBottomValue = computed(() => props.marginBottom + "rem");
-
-console.log("data-check", "right: ", rightOffsetValue.value, "top: ", marginTopValue.value, "bottom: ", marginBottomValue.value);
 </script>
 
 <template>

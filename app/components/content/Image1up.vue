@@ -28,8 +28,6 @@ const aspectRatio = computed(() => {
     return "16 / 9";
   }
 });
-
-console.log(aspectRatio.value);
 </script>
 
 <template>
