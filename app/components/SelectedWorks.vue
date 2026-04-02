@@ -20,10 +20,7 @@ const allProjects = computed(() => [
 </script>
 
 <template>
-  <div
-    v-if="allProjects.length"
-    class="project-grid"
-  >
+  <div v-if="allProjects.length" class="project-grid">
     <ProjectThumbnail
       v-for="(project, index) in allProjects"
       :key="project.id"
