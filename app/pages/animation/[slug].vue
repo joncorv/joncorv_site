@@ -2,6 +2,7 @@
 import type { BreadcrumbItem } from "@nuxt/ui";
 
 const slug = useRoute().params.slug;
+
 const { data: project } = await useAsyncData(`animation-${slug}`, () => {
   return queryCollection("animation").path(`/animation/${slug}`).first();
 });
@@ -62,13 +63,11 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
         </UBadge>
       </div>
 
-      <!-- <div v-if="project.tags?.length" class="tags"> -->
-      <!--   <UBadge v-for="tag in project.tags" :key="tag" class="font-bold rounded-full">{{ tag }}</UBadge> -->
-      <!-- </div> -->
-
       <div class="content">
         <ContentRenderer :value="project" />
       </div>
+
+      <LazyProjectPagination hydrate-on-idle next-item="This is some Next Level Stuff" prev-item="Previously was cool, now not" />
     </div>
     <UError v-else />
   </UContainer>
