@@ -91,14 +91,18 @@ watch(customClass, () => {
 <template>
   <div :class="customClass">
     <div class="header-subparent">
-      <div class="header-left">
-        <div class="title-my-name">
-          JONCORV
+      <!-- <UTooltip text="Let's go home🏡" arrow :delay-duration="0"> -->
+      <UButton to="/" color="neutral" variant="ghost">
+        <div class="header-left">
+          <div class="title-my-name">
+            JONCORV
+          </div>
+          <div class="title-beta">
+            BETA v0.29
+          </div>
         </div>
-        <div class="title-beta">
-          BETA v0.29
-        </div>
-      </div>
+      </UButton>
+      <!-- </UTooltip> -->
 
       <!-- <div class="header-space"> -->
       <!--   space -->
