@@ -35,7 +35,7 @@ const props = defineProps({
       <NuxtPicture
         :src="props.src"
         alt="Project thumbnail"
-        class="project-thumb-img"
+        img-class="project-thumb-img"
         :width="600"
         :height="500"
         format="webp"
