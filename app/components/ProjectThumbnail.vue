@@ -39,6 +39,7 @@ const props = defineProps({
         :width="600"
         :height="500"
         format="webp"
+        fit="cover"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
     </div>
