@@ -42,7 +42,7 @@
             side: 'top',
             sideOffset: 8,
           }"
-          :delay-duration="0"
+          :delay-duration="300"
           text="The best people on the planet!"
           arrow
         >
@@ -67,7 +67,7 @@
             // side: 'top',
             sideOffset: 4,
           }"
-          :delay-duration="0"
+          :delay-duration="300"
           text="Let's organize your files together"
           arrow
         >
@@ -103,7 +103,7 @@
             content: 'text-xl h-8',
             arrow: '',
           }"
-          :delay-duration="0"
+          :delay-duration="300"
           text="👋😎"
           arrow
         >

@@ -91,8 +91,8 @@ watch(customClass, () => {
 <template>
   <div :class="customClass">
     <div class="header-subparent">
-      <!-- <UTooltip text="Let's go home🏡" arrow :delay-duration="0"> -->
-      <UButton to="/" color="neutral" variant="ghost">
+      <!-- <UTooltip text="Let's go home🏡" arrow :delay-duration="300"> -->
+      <UButton to="/" color="neutral" variant="ghost" size="xl">
         <div class="header-left">
           <div class="title-my-name">
             JONCORV
@@ -109,7 +109,7 @@ watch(customClass, () => {
       <!-- </div> -->
 
       <div class="header-right">
-        <UTooltip text="Flashbang Toggle" arrow :delay-duration="0">
+        <UTooltip text="Flashbang Toggle" arrow :delay-duration="300">
           <UColorModeButton />
         </UTooltip>
 
