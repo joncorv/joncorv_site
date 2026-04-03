@@ -54,44 +54,30 @@ const items = ref<DropdownMenuItem[]>([
 
 const headerVisible = ref(true);
 
+let intervalId: ReturnType<typeof setInterval>;
+
 onNuxtReady(() => {
   const { y } = useWindowScroll();
   const prevY = ref(0);
 
-  // fix negative scrolling values
   const yComputed = computed(() => {
-    if (y.value < 0) {
-      return 0;
-    }
-    else {
-      return y.value;
-    }
+    if (y.value < 0) return 0;
+    else return y.value;
   });
 
-  // every x milliseconds, check to see if  we're heading up or down
-  setInterval(() => {
-    // scrolling down
+  intervalId = setInterval(() => {
     if (yComputed.value > prevY.value + 30) {
       prevY.value = y.value;
-      // console.log("mounted_tick: Scrolled Down - STATE CHANGE");
       headerVisible.value = false;
     }
-
-    // scrolling up
     else if (yComputed.value < prevY.value) {
       prevY.value = y.value;
-      // console.log("mounted_tick: Scrolled Up - STATE CHANGE");
       headerVisible.value = true;
-    }
-
-    // not scrolling
-    else {
-      // console.log("mounted_tick: DO NOTHING");
     }
   }, 300);
 });
 
-// onUnmounted(() => clearInterval());
+onUnmounted(() => clearInterval(intervalId));
 
 const customClass = computed(() => {
   return (headerVisible.value) ? "header-container" : "header-container header-hidden";
