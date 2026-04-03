@@ -129,13 +129,10 @@ watch(customClass, () => {
   border-bottom: solid;
   border-radius: 1px;
   border-color: var(--ui-border);
-
   background-color: color-mix(in srgb, var(--ui-bg) 90%, transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-
-  /* transform: translateY(0rem); */
-  transform: translate(0,0rem);
+  transform: translate(0,0);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -150,7 +147,10 @@ watch(customClass, () => {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 76rem; }
+  max-width: 80rem;
+  padding-left: 1.4rem;
+  padding-right: 2rem;
+}
 
 .header-left{
   display: flex;
