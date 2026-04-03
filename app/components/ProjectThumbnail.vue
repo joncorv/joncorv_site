@@ -36,6 +36,8 @@ const props = defineProps({
         :src="props.src"
         alt="Project thumbnail"
         class="project-thumb-img"
+        :width="600"
+        :height="500"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
     </div>

@@ -71,7 +71,9 @@ export default defineNuxtConfig({
       },
     ],
   },
-  image: {},
+  image: {
+    format: ["webp", "jpeg"],
+  },
 
   studio: {
     repository: {
