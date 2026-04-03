@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
-import { onMounted, onUnmounted } from "vue";
+// import { onMounted, onUnmounted } from "vue";
 import { useWindowScroll } from "@vueuse/core";
 
 const items = ref<DropdownMenuItem[]>([
@@ -88,13 +88,13 @@ onNuxtReady(() => {
     else {
       // console.log("mounted_tick: DO NOTHING");
     }
-  }, 1000);
+  }, 300);
 });
 
 // onUnmounted(() => clearInterval());
 
 const customClass = computed(() => {
-  return (headerVisible.value) ? "custom-header" : "custom-header custom-header-hidden";
+  return (headerVisible.value) ? "header-container" : "header-container header-hidden";
 });
 
 watch(customClass, () => {
@@ -104,54 +104,88 @@ watch(customClass, () => {
 
 <template>
   <div :class="customClass">
-    this is a test
+    <div class="header-subparent">
+      <div class="header-left">
+        <div class="title-my-name">
+          JONCORV
+        </div>
+        <div class="title-beta">
+          BETA v0.29
+        </div>
+      </div>
+
+      <!-- <div class="header-space"> -->
+      <!--   space -->
+      <!-- </div> -->
+
+      <div class="header-right">
+        <UTooltip text="Flashbang Toggle" arrow :delay-duration="0">
+          <UColorModeButton />
+        </UTooltip>
+
+        <UDropdownMenu :items="items">
+          <UButton icon="lucide:menu" color="neutral" variant="ghost" />
+        </UDropdownMenu>
+      </div>
+    </div>
   </div>
-
-  <!-- <div :class="customClass"> -->
-  <UHeader
-    :toggle="false"
-    :class="customClass"
-  >
-    <template #title>
-      <p class="title-my-name">
-        JONCORV
-      </p>
-      <p class="title-beta">
-        BETA v0.29
-      </p>
-      <p class="title-beta">
-        scroll y = {{ headerVisible }}
-      </p>
-    </template>
-
-    <template #right>
-      <UTooltip text="Flashbang Toggle" arrow :delay-duration="0">
-        <UColorModeButton />
-      </UTooltip>
-
-      <UDropdownMenu :items="items">
-        <UButton icon="lucide:menu" color="neutral" variant="ghost" />
-      </UDropdownMenu>
-    </template>
-  </UHeader>
-  <!-- </div> -->
 </template>
 
 <style scoped>
-.custom-header {
+.header-container {
   position: fixed;
   z-index: 1001;
-  transform: translateY(0);
-  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
   width: 100lvw;
-  background-color: green;
-  transition: all 0.3s ease;
+  border-bottom: solid;
+  border-radius: 1px;
+  border-color: var(--ui-border);
+
+  background-color: color-mix(in srgb, var(--ui-bg) 90%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* transform: translateY(0rem); */
+  transform: translate(0,0rem);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.custom-header-hidden {
-  transform: translateY(-100%);
-  background-color: red;
+.header-hidden {
+  transform: translateY(-3.5rem);
+  background-color: color-mix(in srgb, var(--ui-bg) 0%, transparent);
+}
 
+.header-subparent {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 76rem; }
+
+.header-left{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-space {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .title-my-name {
@@ -165,7 +199,7 @@ watch(customClass, () => {
   font-family: var(--font-mono);
   font-size: 0.58em;
   font-weight: 900;
-  padding-bottom: 0.18em;
+  /* padding-bottom: 0.18em; */
   color: var(--color-neutral-500);
 }
 </style>
