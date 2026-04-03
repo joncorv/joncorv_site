@@ -32,12 +32,13 @@ const props = defineProps({
     class="project-card"
   >
     <div class="project-thumb">
-      <NuxtImg
+      <NuxtPicture
         :src="props.src"
         alt="Project thumbnail"
         class="project-thumb-img"
         :width="600"
         :height="500"
+        format="webp"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
     </div>
