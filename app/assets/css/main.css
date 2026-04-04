@@ -11,6 +11,11 @@ code, pre, kbd, samp, .font-mono {
   font-family: var(--font-mono);
 }
 
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable;                                                                                                                                                                  
+}
+
 :root {
   /* --font-sans: "Manrope", sans-serif; */
   --font-sans: "Plus Jakarta Sans", sans-serif;

@@ -125,6 +125,8 @@ watch(customClass, () => {
 .header-container {
   position: fixed;
   z-index: 1001;
+  display: flex;
+  align-items: center;
   height: 3.5rem;
   width: 100%;
   border-bottom: solid;
@@ -179,7 +181,7 @@ watch(customClass, () => {
   justify-content: left;
   align-items: center;
   gap: 0.5rem;
-  transform: translateX(-1.0rem);
+  /* transform: translateX(-1.0rem); */
 }
 
 .header-space {
@@ -193,7 +195,7 @@ watch(customClass, () => {
   justify-content: right;
   align-items: center;
   gap: 0.5rem;
-  transform: translateX(0.5rem);
+  /* transform: translateX(0.5rem); */
 }
 
 .title-my-name {
