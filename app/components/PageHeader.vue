@@ -92,16 +92,16 @@ watch(customClass, () => {
   <div :class="customClass">
     <div class="header-subparent">
       <!-- <UTooltip text="Let's go home🏡" arrow :delay-duration="300"> -->
-      <UButton to="/" color="neutral" variant="ghost" size="xl">
-        <div class="header-left">
+      <div class="header-left">
+        <UButton to="/" color="neutral" variant="ghost" size="xl">
           <div class="title-my-name">
             JONCORV
           </div>
           <div class="title-beta">
             BETA v0.29
           </div>
-        </div>
-      </UButton>
+        </UButton>
+      </div>
       <!-- </UTooltip> -->
 
       <!-- <div class="header-space"> -->
@@ -125,11 +125,8 @@ watch(customClass, () => {
 .header-container {
   position: fixed;
   z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 3.5rem;
-  width: 100lvw;
+  width: 100%;
   border-bottom: solid;
   border-radius: 1px;
   border-color: var(--ui-border);
@@ -146,14 +143,33 @@ watch(customClass, () => {
 }
 
 .header-subparent {
+  /* background-color: red; */
   display: flex;
-  flex: 1;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   max-width: 80rem;
-  padding-left: 1.4rem;
-  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+  /* small 1.5 */
+@media (min-width: 640px) {
+  .header-subparent {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+  /* large 2 */
+@media (min-width: 1024px) {
+  .header-subparent {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .header-left{
@@ -163,6 +179,7 @@ watch(customClass, () => {
   justify-content: left;
   align-items: center;
   gap: 0.5rem;
+  transform: translateX(-1.0rem);
 }
 
 .header-space {
@@ -176,6 +193,7 @@ watch(customClass, () => {
   justify-content: right;
   align-items: center;
   gap: 0.5rem;
+  transform: translateX(0.5rem);
 }
 
 .title-my-name {
