@@ -17,7 +17,6 @@ const props = defineProps({
   },
   width: {
     type: String,
-    // required: true,
   },
   priority: {
     type: Boolean,
@@ -42,22 +41,20 @@ const props = defineProps({
         fit="cover"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
-    </div>
-    <div class="project-info">
-      <span class="project-title">{{ props.title }}</span>
-      <span
-        v-if="props.description"
-        class="project-description"
-      >{{ props.description }}</span>
+      <div class="project-info">
+        <span class="project-title">{{ props.title }}</span>
+        <span
+          v-if="props.description"
+          class="project-description"
+        >{{ props.description }}</span>
+      </div>
     </div>
   </NuxtLink>
 </template>
 
 <style scoped>
 .project-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: block;
 }
 
 .project-thumb {
@@ -83,28 +80,44 @@ const props = defineProps({
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-thumb-img {
+  transform: scale(1.05);
 }
 
 .project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.25rem 1.25rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  border-radius: 0 0 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
 
 .project-title {
-  /* font-size: 1.2rem; */
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
   font-weight: 600;
   line-height: 1.3;
+  color: white;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .project-description {
-  /* font-size: 0.75em; */
-  font-size: clamp(0.75rem, 4vw, 0.9rem);
-  /* font-family: var(--font-mono); */
-  font-weight: 100;
-  opacity: 0.7;
+  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+  font-weight: 400;
   line-height: 1.3;
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 </style>
