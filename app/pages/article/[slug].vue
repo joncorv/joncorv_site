@@ -11,9 +11,9 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     to: "/",
   },
   {
-    label: "Projects",
-    icon: "lucide:box",
-    to: "/animation/all-projects",
+    label: "Articles",
+    icon: "lucide:notebook-pen",
+    to: "/article/all-articles",
   },
   {
     label: article.value?.title,
@@ -25,8 +25,8 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
 
 <template>
   <UContainer>
+    <UBreadcrumb v-if="article" :items="breadcrumbItems" class="mt-4" />
     <div v-if="article" class="page">
-      <UBreadcrumb :items="breadcrumbItems" class="mt-4" />
       <p class="page-client">
         RUMINATIONS ON THINGS
       </p>
