@@ -65,13 +65,13 @@ const { data: surround_data } = await useAsyncData(`surround-${path}`, () => {
 }
 
 .pagination-item-large {
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 3.5vw, 2rem);
   font-weight: 600;
   font-family: var(--font-serif);
   color: var(--ui-text-accented);
 }
 .pagination-item-small {
-  font-size: 0.85rem;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
   font-weight: 600;
   font-family: var(--font-mono);
   color: var(--ui-text-muted);
