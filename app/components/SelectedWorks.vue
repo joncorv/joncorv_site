@@ -28,7 +28,9 @@ const allProjects = computed(() => [
       :src="project.thumbnail"
       :title="project.title"
       :description="project.description"
+      :tags="project.tags"
       :priority="index < 4"
+      :compact="index >= 4"
       width="600px"
     />
   </div>
@@ -91,6 +93,7 @@ const allProjects = computed(() => [
   .project-card:nth-child(n+5) {
     grid-column: span 2;
   }
+
 }
 
 .button-container {
