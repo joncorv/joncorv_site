@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { PropType } from 'vue'
 const props = defineProps({
   path: {
     type: String,
@@ -15,10 +16,18 @@ const props = defineProps({
   description: {
     type: String,
   },
+  tags: {
+    type: Array as PropType<string[]>,
+    default: () => [],
+  },
   width: {
     type: String,
   },
   priority: {
+    type: Boolean,
+    default: false,
+  },
+  compact: {
     type: Boolean,
     default: false,
   },
@@ -41,12 +50,22 @@ const props = defineProps({
         fit="cover"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
-      <div class="project-info">
-        <span class="project-title">{{ props.title }}</span>
+      <div class="project-info" :class="{ 'project-info--compact': props.compact }">
+        <div class="project-text">
+          <span class="project-title">{{ props.title }}</span>
+          <span class="project-rule">⁂</span>
+          <span
+            v-if="props.description"
+            class="project-description"
+          >{{ props.description }}</span>
+        </div>
+      </div>
+      <div v-if="props.tags?.length" class="project-tags">
         <span
-          v-if="props.description"
-          class="project-description"
-        >{{ props.description }}</span>
+          v-for="tag in props.tags.slice(0, 3)"
+          :key="tag"
+          class="project-tag"
+        >{{ tag.toUpperCase() }}</span>
       </div>
     </div>
   </NuxtLink>
@@ -89,10 +108,11 @@ const props = defineProps({
 
 .project-info {
   position: absolute;
+  top: 32%;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.5rem 1.25rem 1.25rem;
+  padding: 0 1.25rem 1.25rem;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8) 0%,
@@ -102,22 +122,118 @@ const props = defineProps({
   border-radius: 0 0 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+.project-info--compact {
+  top: 0;
+  border-radius: 1.5rem;
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.2rem;
+  transform: scale(0.78);
+  transition: transform 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+.project-card:hover .project-text {
+  transform: scale(1);
 }
 
 .project-title {
-  font-size: clamp(1rem, 3.5vw, 1.4rem);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  /* font-family: var(--font-mono); */
+  font-size: clamp(1.25rem, 4.375vw, 2.5rem);
+  font-style: italic;
+  font-weight: 900;
   line-height: 1.3;
   color: white;
+  text-align: center;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.1em;
+  transition: letter-spacing 0.9s cubic-bezier(0.2, 0.5, 0.4, 1);
+}
+
+.project-card:hover .project-title {
+  letter-spacing: 0;
+}
+
+.project-tags {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s cubic-bezier(0.3, 0, 0.5, 1),
+    transform 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+.project-card:hover .project-tags {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-mauve-900);
+}
+
+.project-rule {
+  display: block;
+  color: white;
+  font-size: 1.25rem;
+  margin-top: -0.3rem;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.project-card:hover .project-rule {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-description {
-  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+  font-size: clamp(1.25rem, 1.875vw, 1.25rem);
   font-weight: 400;
   line-height: 1.3;
-  color: rgba(255, 255, 255, 0.75);
+  color: white;
+  text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-info,
+  .project-title,
+  .project-description {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    letter-spacing: normal;
+  }
 }
 </style>
