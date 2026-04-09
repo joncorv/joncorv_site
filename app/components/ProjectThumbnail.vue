@@ -50,13 +50,6 @@ const props = defineProps({
         fit="cover"
         :loading="props.priority ? 'eager' : 'lazy'"
       />
-      <div v-if="props.tags?.length" class="project-tags">
-        <span
-          v-for="tag in props.tags.slice(0, 3)"
-          :key="tag"
-          class="project-tag"
-        >{{ tag.toUpperCase() }}</span>
-      </div>
     </div>
     <div class="project-info" :class="{ 'project-info--compact': props.compact }">
       <div class="project-text">
@@ -67,6 +60,13 @@ const props = defineProps({
           class="project-description"
         >{{ props.description }}</span>
       </div>
+    </div>
+    <div v-if="props.tags?.length" class="project-tags">
+      <span
+        v-for="tag in props.tags.slice(0, 3)"
+        :key="tag"
+        class="project-tag"
+      >{{ tag.toUpperCase() }}</span>
     </div>
   </NuxtLink>
 </template>
