@@ -59,7 +59,7 @@
       <!-- NOTE:  Start Third Paragraph -->
       <span class="type-normal">I came up through animation and design, started writing code to solve problems the tools couldn't, and kept going until I released </span>
 
-      <NuxtLink to="https://github.com/joncorv/filera" target="_blank" external no-prefetch>
+      <NuxtLink to="https://filera.app" target="_blank" external no-prefetch>
 
         <UTooltip
           :content="{
