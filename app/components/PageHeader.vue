@@ -4,7 +4,6 @@ import type { DropdownMenuItem } from "@nuxt/ui";
 import { useWindowScroll } from "@vueuse/core";
 
 const items = ref<DropdownMenuItem[]>([
-
   {
     label: "Home",
     icon: "lucide:home",
@@ -69,8 +68,7 @@ onNuxtReady(() => {
     if (yComputed.value > prevY.value + 30) {
       prevY.value = y.value;
       headerVisible.value = false;
-    }
-    else if (yComputed.value < prevY.value) {
+    } else if (yComputed.value < prevY.value) {
       prevY.value = y.value;
       headerVisible.value = true;
     }
@@ -80,7 +78,9 @@ onNuxtReady(() => {
 onUnmounted(() => clearInterval(intervalId));
 
 const customClass = computed(() => {
-  return (headerVisible.value) ? "header-container" : "header-container header-hidden";
+  return headerVisible.value
+    ? "header-container"
+    : "header-container header-hidden";
 });
 
 watch(customClass, () => {
@@ -94,12 +94,8 @@ watch(customClass, () => {
       <!-- <UTooltip text="Let's go home🏡" arrow :delay-duration="300"> -->
       <div class="header-left">
         <UButton to="/" color="neutral" variant="ghost" size="xl">
-          <div class="title-my-name">
-            JONCORV
-          </div>
-          <div class="title-beta">
-            BETA v0.29
-          </div>
+          <div class="title-my-name">JONCORV</div>
+          <div class="title-beta">BETA v0.31</div>
         </UButton>
       </div>
       <!-- </UTooltip> -->
@@ -135,8 +131,10 @@ watch(customClass, () => {
   background-color: color-mix(in srgb, var(--ui-bg) 90%, transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  transform: translate(0,0);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform: translate(0, 0);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .header-hidden {
@@ -158,7 +156,7 @@ watch(customClass, () => {
   padding-right: 1rem;
 }
 
-  /* small 1.5 */
+/* small 1.5 */
 @media (min-width: 640px) {
   .header-subparent {
     padding-left: 1.5rem;
@@ -166,7 +164,7 @@ watch(customClass, () => {
   }
 }
 
-  /* large 2 */
+/* large 2 */
 @media (min-width: 1024px) {
   .header-subparent {
     padding-left: 2rem;
@@ -174,7 +172,7 @@ watch(customClass, () => {
   }
 }
 
-.header-left{
+.header-left {
   display: flex;
   flex: 1;
   flex-direction: row;
