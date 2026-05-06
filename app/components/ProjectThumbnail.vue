@@ -60,13 +60,13 @@ const props = defineProps({
           class="project-description"
         >{{ props.description }}</span>
       </div>
-    </div>
-    <div v-if="props.tags?.length" class="project-tags">
-      <span
-        v-for="tag in props.tags.slice(0, 3)"
-        :key="tag"
-        class="project-tag"
-      >{{ tag.toUpperCase() }}</span>
+      <div v-if="props.tags?.length" class="project-tags">
+        <span
+          v-for="tag in props.tags.slice(0, 3)"
+          :key="tag"
+          class="project-tag"
+        >{{ tag.toUpperCase() }}</span>
+      </div>
     </div>
   </NuxtLink>
 </template>
@@ -119,11 +119,12 @@ const props = defineProps({
 @media (min-width: 768px) {
   .project-info {
     position: absolute;
-    top: 32%;
+    top: 67%;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0 1.25rem 1.25rem;
+    gap: 0.45rem;
     background: linear-gradient(
       to top,
       rgba(0, 0, 0, 0.8) 0%,
@@ -132,7 +133,7 @@ const props = defineProps({
     );
     border-radius: 0 0 1.5rem 1.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.3, 0, 0.5, 1);
   }
@@ -141,9 +142,8 @@ const props = defineProps({
     opacity: 1;
   }
 
-  .project-info--compact {
-    top: 0;
-    border-radius: 1.5rem;
+  .project-info--compact .project-title {
+    font-size: clamp(1.31rem, 2.81vw, 1.75rem);
   }
 }
 
@@ -156,9 +156,9 @@ const props = defineProps({
 }
 
 .project-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 4vw, 1.25rem);
-  font-style: italic;
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-style: normal;
   font-weight: 900;
   line-height: 1.3;
   color: var(--ui-text);
@@ -170,25 +170,25 @@ const props = defineProps({
 @media (min-width: 768px) {
   .project-text {
     align-items: center;
-    transform: scale(0.78);
-    transition: transform 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s cubic-bezier(0.3, 0, 0.5, 1),
+      transform 0.5s cubic-bezier(0.3, 0, 0.5, 1);
   }
 
   .project-card:hover .project-text {
-    transform: scale(1);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .project-title {
-    font-size: clamp(1.25rem, 4.375vw, 2.5rem);
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: clamp(1.1rem, 3.75vw, 2.1rem);
     color: white;
     text-align: center;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-    letter-spacing: -0.1em;
-    transition: letter-spacing 0.9s cubic-bezier(0.2, 0.5, 0.4, 1);
-  }
-
-  .project-card:hover .project-title {
-    letter-spacing: 0;
   }
 }
 
@@ -200,10 +200,6 @@ const props = defineProps({
 @media (min-width: 768px) {
   .project-tags {
     display: flex;
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    right: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.35rem;
@@ -243,42 +239,19 @@ const props = defineProps({
   text-align: left;
 }
 
-/* Desktop: rule animated, description white */
 @media (min-width: 768px) {
-  .project-rule {
-    display: block;
-    color: white;
-    font-size: 1.25rem;
-    margin-top: -0.3rem;
-    line-height: 1;
-    opacity: 0;
-    transform: scale(0.7);
-    transition:
-      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
-      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
-  }
-
-  .project-card:hover .project-rule {
-    opacity: 1;
-    transform: scale(1);
-  }
-
   .project-description {
-    font-size: clamp(1.25rem, 1.875vw, 1.25rem);
-    color: white;
-    text-align: center;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    display: none;
   }
 }
 
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
   .project-info,
-  .project-title,
-  .project-description {
+  .project-text,
+  .project-tags {
     transition: none;
     opacity: 1;
     transform: none;
-    letter-spacing: normal;
   }
 }
 </style>
