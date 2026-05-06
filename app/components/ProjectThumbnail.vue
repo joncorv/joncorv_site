@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import type { PropType } from "vue";
+
 const props = defineProps({
   path: {
     type: String,
@@ -35,10 +36,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink
-    :to="props.path"
-    class="project-card"
-  >
+  <NuxtLink :to="props.path" class="project-card">
     <div class="project-thumb">
       <NuxtPicture
         :src="props.src"
@@ -51,21 +49,24 @@ const props = defineProps({
         :loading="props.priority ? 'eager' : 'lazy'"
       />
     </div>
-    <div class="project-info" :class="{ 'project-info--compact': props.compact }">
+    <div
+      class="project-info"
+      :class="{ 'project-info--compact': props.compact }"
+    >
       <div class="project-text">
         <span class="project-title">{{ props.title }}</span>
         <span class="project-rule">⁂</span>
-        <span
-          v-if="props.description"
-          class="project-description"
-        >{{ props.description }}</span>
+        <span v-if="props.description" class="project-description">{{
+          props.description
+        }}</span>
       </div>
       <div v-if="props.tags?.length" class="project-tags">
         <span
           v-for="tag in props.tags.slice(0, 3)"
           :key="tag"
           class="project-tag"
-        >{{ tag.toUpperCase() }}</span>
+          >{{ tag.toUpperCase() }}</span
+        >
       </div>
     </div>
   </NuxtLink>
@@ -123,8 +124,8 @@ const props = defineProps({
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 0 1.25rem 1.25rem;
-    gap: 0.45rem;
+    padding: 0 1.25rem 1.6rem;
+    gap: 0.8rem;
     background: linear-gradient(
       to top,
       rgba(0, 0, 0, 0.8) 0%,
@@ -163,7 +164,7 @@ const props = defineProps({
   line-height: 1.3;
   color: var(--ui-text);
   text-align: left;
-  letter-spacing: -0.03em;
+  /* letter-spacing: -0.03em; */
 }
 
 /* Desktop: centered, white, animated */
@@ -217,10 +218,10 @@ const props = defineProps({
 }
 
 .project-tag {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 0.2rem 0.65rem;
+  padding: 0.18rem 0.58rem;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.9);
   color: var(--color-mauve-900);
