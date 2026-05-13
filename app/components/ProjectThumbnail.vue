@@ -65,8 +65,9 @@ const props = defineProps({
           v-for="tag in props.tags.slice(0, 3)"
           :key="tag"
           class="project-tag"
-          >{{ tag.toUpperCase() }}</span
         >
+          {{ tag.toUpperCase() }}
+        </span>
       </div>
     </div>
   </NuxtLink>
@@ -78,21 +79,45 @@ const props = defineProps({
   position: relative;
 }
 
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  transition-duration: 0.075s;
+}
+
 .project-thumb {
   overflow: hidden;
   aspect-ratio: 12 / 9;
   border-radius: 1.5rem;
   position: relative;
-  box-shadow:
-    0 0 0 0 transparent,
-    0 0 0 transparent;
-  transition: box-shadow 0.3s ease;
 }
 
-.project-card:hover .project-thumb {
-  box-shadow:
-    0 0 0 4px var(--color-neutral-300),
-    12px 12px 24px rgba(0, 0, 0, 0.5);
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 4px var(--color-neutral-300);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-thumb::after {
+  opacity: 1;
+  transition-duration: 0.075s;
 }
 
 .project-thumb-img {
