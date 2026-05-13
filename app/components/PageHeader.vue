@@ -125,9 +125,8 @@ watch(customClass, () => {
   align-items: center;
   height: 3.5rem;
   width: 100%;
-  border-bottom: solid;
+  border-bottom: 2px solid var(--ui-border);
   border-radius: 1px;
-  border-color: var(--ui-border);
   background-color: color-mix(in srgb, var(--ui-bg) 90%, transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);

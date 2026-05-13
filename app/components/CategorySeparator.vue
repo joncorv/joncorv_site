@@ -18,7 +18,8 @@ const props = defineProps({
 <style scoped>
 .horiz-rule {
   margin-top: 1rem;
-  border-color: var(--ui-border-accented);
+  border: 0;
+  border-top: 2px solid var(--ui-border-accented);
 }
 
 .text-category {

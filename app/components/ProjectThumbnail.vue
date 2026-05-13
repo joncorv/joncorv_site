@@ -33,6 +33,10 @@ const props = defineProps({
     default: false,
   },
 });
+
+const visibleTags = computed(() => {
+  return props.tags.slice(0, 3).map(tag => tag.toUpperCase());
+});
 </script>
 
 <template>
@@ -60,13 +64,13 @@ const props = defineProps({
           props.description
         }}</span>
       </div>
-      <div v-if="props.tags?.length" class="project-tags">
+      <div v-if="visibleTags.length" class="project-tags">
         <span
-          v-for="tag in props.tags.slice(0, 3)"
+          v-for="tag in visibleTags"
           :key="tag"
           class="project-tag"
         >
-          {{ tag.toUpperCase() }}
+          {{ tag }}
         </span>
       </div>
     </div>
@@ -77,13 +81,34 @@ const props = defineProps({
 .project-card {
   display: block;
   position: relative;
+  z-index: 0;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 12 / 9;
+  border-radius: 1.5rem;
+  corner-shape: superellipse(1.4);
+  box-shadow: inset 0 0 0 2px var(--color-neutral-300);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 3;
 }
 
 .project-card::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 12 / 9;
   border-radius: 1.5rem;
+  corner-shape: superellipse(1.4);
   box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
@@ -91,6 +116,7 @@ const props = defineProps({
   z-index: -1;
 }
 
+.project-card:hover::before,
 .project-card:hover::after {
   opacity: 1;
   transition-duration: 0.075s;
@@ -100,24 +126,9 @@ const props = defineProps({
   overflow: hidden;
   aspect-ratio: 12 / 9;
   border-radius: 1.5rem;
+  corner-shape: superellipse(1.4);
   position: relative;
-}
-
-.project-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 4px var(--color-neutral-300);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-  z-index: 2;
-}
-
-.project-card:hover .project-thumb::after {
-  opacity: 1;
-  transition-duration: 0.075s;
+  z-index: 1;
 }
 
 .project-thumb-img {
@@ -135,6 +146,8 @@ const props = defineProps({
 
 /* Mobile: text sits below the thumbnail */
 .project-info {
+  position: relative;
+  z-index: 2;
   padding: 0.6rem 0.25rem 0;
   display: flex;
   flex-direction: column;
@@ -145,7 +158,7 @@ const props = defineProps({
 @media (min-width: 768px) {
   .project-info {
     position: absolute;
-    top: 67%;
+    top: 50%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -153,11 +166,13 @@ const props = defineProps({
     gap: 0.8rem;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 45%,
+      rgba(0, 0, 0, 0.18) 78%,
       transparent 100%
     );
     border-radius: 0 0 1.5rem 1.5rem;
+    corner-shape: superellipse(1.4);
     align-items: center;
     justify-content: flex-end;
     opacity: 0;
@@ -274,9 +289,21 @@ const props = defineProps({
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
   .project-info,
   .project-text,
-  .project-tags {
+  .project-tags,
+  .project-thumb-img,
+  .project-card::before,
+  .project-card::after {
     transition: none;
+  }
+
+  .project-info,
+  .project-text,
+  .project-tags {
     opacity: 1;
+    transform: none;
+  }
+
+  .project-card:hover .project-thumb-img {
     transform: none;
   }
 }
