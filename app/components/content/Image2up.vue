@@ -8,6 +8,14 @@ const props = defineProps({
     type: String,
     default: "/images/dummy_image.png",
   },
+  alt1: {
+    type: String,
+    default: "",
+  },
+  alt2: {
+    type: String,
+    default: "",
+  },
   width: {
     type: Number,
     default: 16,
@@ -35,13 +43,13 @@ const aspectRatio = computed(() => {
     <div
       class="left_image"
     >
-      <NuxtImg :src="imageSource1" />
+      <NuxtImg :src="imageSource1" :alt="alt1" />
     </div>
 
     <div
       class="right_image"
     >
-      <NuxtImg :src="imageSource2" />
+      <NuxtImg :src="imageSource2" :alt="alt2" />
     </div>
   </div>
 </template>
@@ -61,6 +69,18 @@ const aspectRatio = computed(() => {
   flex: 1;
   min-width: 0;
   display: flex;
+}
+
+@media (max-width: 639px) {
+  .hero-container {
+    aspect-ratio: auto;
+    flex-direction: column;
+  }
+
+  .left_image,
+  .right_image {
+    aspect-ratio: 3 / 2;
+  }
 }
 
 .left_image :deep(img),

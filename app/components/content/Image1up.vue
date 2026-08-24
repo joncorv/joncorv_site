@@ -33,7 +33,7 @@ const aspectRatio = computed(() => {
 <template>
   <div class="hero-container">
     <div class="image">
-      <NuxtImg :src="src" />
+      <NuxtImg :src="src" :alt="alt" />
     </div>
   </div>
 </template>
