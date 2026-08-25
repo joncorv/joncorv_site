@@ -140,10 +140,16 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
 .content :deep(h2),
 .content :deep(h3),
 .content :deep(h4),
-.content :deep(p) {
+.content :deep(p),
+.content :deep(ul) {
   max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content :deep(ul) {
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
 
 .content :deep(p) {
