@@ -16,6 +16,10 @@ const props = defineProps({
     type: Number,
     default: 9,
   },
+  to: {
+    type: String,
+    default: undefined,
+  },
 });
 
 const aspectRatio = computed(() => {
@@ -32,7 +36,13 @@ const aspectRatio = computed(() => {
 
 <template>
   <div class="hero-container">
-    <div class="image">
+    <!-- conditional rendering if there is a "to" prop -->
+    <NuxtLink v-if="props.to" class="image" :to="props.to" target="_blank" external no-prefetch>
+      <NuxtImg :src="src" :alt="alt" />
+    </NuxtLink>
+
+    <!-- conditional rendering if there is a "to" prop -->
+    <div v-else class="image">
       <NuxtImg :src="src" :alt="alt" />
     </div>
   </div>
