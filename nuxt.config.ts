@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "JONCORV: CG & CODE",
+      title: "joncorv - Computer Graphics & Programming",
     },
   },
   css: ["~/assets/css/main.css"],
